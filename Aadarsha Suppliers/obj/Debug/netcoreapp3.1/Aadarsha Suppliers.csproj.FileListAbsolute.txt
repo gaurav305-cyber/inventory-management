@@ -1,0 +1,25 @@
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\Aadarsha Suppliers.exe
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\Aadarsha Suppliers.deps.json
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\Aadarsha Suppliers.runtimeconfig.json
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\Aadarsha Suppliers.runtimeconfig.dev.json
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\Aadarsha Suppliers.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\Aadarsha Suppliers.pdb
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.csproj.AssemblyReference.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.Form1.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.Properties.Resources.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.csproj.GenerateResource.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.AssemblyInfoInputs.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.AssemblyInfo.cs
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.csproj.CoreCompileInputs.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.pdb
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.genruntimeconfig.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.manage_product.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppliers.csproj.CopyComplete
