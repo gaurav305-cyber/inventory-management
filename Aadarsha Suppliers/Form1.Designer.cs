@@ -70,6 +70,7 @@ namespace Aadarsha_Suppliers
             this.panelFormLoader.Name = "panelFormLoader";
             this.panelFormLoader.Size = new System.Drawing.Size(1600, 842);
             this.panelFormLoader.TabIndex = 8;
+            this.panelFormLoader.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelFormLoader_MouseDoubleClick);
             // 
             // panel4
             // 

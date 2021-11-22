@@ -55,5 +55,10 @@ namespace Aadarsha_Suppliers
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void panelFormLoader_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
