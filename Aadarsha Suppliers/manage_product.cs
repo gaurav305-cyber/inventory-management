@@ -34,6 +34,7 @@ namespace Aadarsha_Suppliers
         {
             // generatesno();
             populate();
+            search("","");
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -156,6 +157,26 @@ namespace Aadarsha_Suppliers
             con.Close();
             clear();
             populate();
+        }
+
+        public void search(string value, string value1)
+        {
+            
+            con.Open();
+            string myquery = "select * from ProductTbl where Name like '%" + value + "%' AND Type like '%" + value1 + "%'";
+            SqlDataAdapter da = new SqlDataAdapter(myquery, con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            dataGridView1.DataSource = ds.Tables[0];
+
+            con.Close();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string value = name.Text.ToString();
+            string value1 = type.Text.ToString();
+            search(value, value1);
         }
     }
 }

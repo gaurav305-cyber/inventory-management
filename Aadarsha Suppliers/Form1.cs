@@ -26,14 +26,15 @@ namespace Aadarsha_Suppliers
         public Form1()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            button_stock.BackColor = Color.FromArgb(46, 51, 73);
-            button_stock.ForeColor = Color.FromArgb(255,255,255);
+
+            button_settings(button4, null);
             this.panelFormLoader.Controls.Clear();
-            manage_product Frmmanage_vrb = new manage_product() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
-            this.panelFormLoader.Controls.Add(Frmmanage_vrb);
-            Frmmanage_vrb.Show();
+            generate_bill Frmbill_vrb = new generate_bill() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Frmbill_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.panelFormLoader.Controls.Add(Frmbill_vrb);
+            Frmbill_vrb.Show();
+            
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -59,6 +60,51 @@ namespace Aadarsha_Suppliers
         private void panelFormLoader_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button_settings(button4, null);
+            this.panelFormLoader.Controls.Clear();
+            generate_bill Frmbill_vrb = new generate_bill() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Frmbill_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.panelFormLoader.Controls.Add(Frmbill_vrb);
+            Frmbill_vrb.Show();
+            
+        }
+
+        private void button_stock_Click(object sender, EventArgs e)
+        {
+            button_settings(button_stock, null);
+            this.panelFormLoader.Controls.Clear();
+            manage_product Frmmanage_vrb = new manage_product() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.panelFormLoader.Controls.Add(Frmmanage_vrb);
+            Frmmanage_vrb.Show();
+            
+        }
+
+        //private void button4_Leave(object sender, EventArgs e)
+        //{
+            //button4.BackColor = Color.FromArgb(255,255,255);
+          //  button4.ForeColor = Color.FromArgb(0,0,0);
+        //}
+
+       // private void button_stock_Leave(object sender, EventArgs e)
+        //{
+          //  button_stock.BackColor = Color.FromArgb(255,255,255);
+            //button_stock.ForeColor = Color.FromArgb(0, 0, 0);
+        //}
+        private void button_settings(object sender, EventArgs e)
+        {
+            foreach(Control c in panel4.Controls)
+            {
+                c.BackColor= Color.FromArgb(255,255,255);
+                c.ForeColor = Color.FromArgb(0,0,0);
+            }
+            Control click = (Control)sender;
+            click.BackColor= Color.FromArgb(0, 128, 255);
+            click.ForeColor = Color.FromArgb(255,255,255);
         }
     }
 }
