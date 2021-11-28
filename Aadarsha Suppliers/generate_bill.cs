@@ -14,47 +14,119 @@ namespace Aadarsha_Suppliers
         public generate_bill()
         {
             InitializeComponent();
+            countrow.Visible = false;
         }
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True");
+        SqlCommand cmd;
+        SqlDataReader dr;
         DataTable dt = new DataTable();
         int bill_no;
         int subtotal;
         int grand_total;
         int balance1;
         // string connStr = "Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True";
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True");
+       
         private void generate_bill_Load(object sender, EventArgs e)
         {
-            dt.Columns.Add("Customer Name");
-            dt.Columns.Add("Address");
-            dt.Columns.Add("ConatctNumber");
-            dt.Columns.Add("Email");
-            dt.Columns.Add("Product");
-            dt.Columns.Add("Quantity");
-            dt.Columns.Add("Price");
+            product.Select();
+            product.Items.Clear();
+            con.Open();
+            cmd=con.CreateCommand();
+            cmd.CommandType=CommandType.Text;
+            cmd.CommandText="select Name from ProductTbl order by Name asc";
+            cmd.ExecuteNonQuery();
+            DataTable dt =new DataTable();
+            SqlDataAdapter da =new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                product.Items.Add(dr["Name"].ToString());
+            }
+            con.Close();
+            LoadBillNo();
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
 
-            dataGridView1.DataSource = dt;
         }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+         public void LoadBillNo()
+        {
+
+            int a;
+            string constr = "Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True";
+            con = new SqlConnection(constr);
+            con.Open();
+            string query = "select Max(Bill_no) from BillTbl";
+            cmd = new SqlCommand(query, con);
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                string val = dr[0].ToString();
+                if (val == "")
+                {
+                    bill.Text = "1"; 
+                }
+                else
+                {
+                    a = Convert.ToInt32(dr[0].ToString());
+                    a = a + 1;
+                    bill.Text = a.ToString();
+
+                }
+                con.Close();
+            }
         }
 
         
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataRow dr = dt.NewRow();
-            dr[0] = c_name.Text;
-            dr[1] = address.Text;
-            dr[2] = phone.Text;
-            dr[3] = email.Text;
-            dr[4] = product.Text;
-            dr[6] = price.Text;
-            dr[5] = quantity.Text;
-            dt.Rows.Add(dr);
-            subtotal = Convert.ToInt32(price.Text) * Convert.ToInt32(quantity.Text);
-            sub.Text = subtotal.ToString();
+            if (countrow.Text == "")
+            {
+                int row = 0;
+                dataGridView1.Rows.Add();
+                row = dataGridView1.Rows.Count - 1;
+                dataGridView1["product_name", row].Value = product.Text;
+                dataGridView1["pp", row].Value = price.Text;
+                dataGridView1["qty", row].Value = quantity.Text;
+                dataGridView1["amt", row].Value = amount.Text;
+                dataGridView1["billno", row].Value = bill.Text;
+                dataGridView1["date", row].Value = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                dataGridView1.Refresh();
+                product.Focus();
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1];
+
+                }
             
+                
+            }
+            else
+            {
+                int i;
+                i = Convert.ToInt32(countrow.Text);
+                DataGridViewRow row = dataGridView1.Rows[i-1];
+                row.Cells[1].Value = product.Text;
+                row.Cells[2].Value = price.Text;
+                row.Cells[3].Value = quantity.Text;
+                row.Cells[4].Value = amount.Text;
+                row.Cells[5].Value = bill.Text;
+                row.Cells[6].Value = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                //button1.Text = "Add";
+
+
+            }
+            clear();
+            subTotal();
+            
+
+            //subtotal = Convert.ToInt32(price.Text) * Convert.ToInt32(quantity.Text);
+            // sub.Text = subtotal.ToString();
+
         }
         private void discount_TextChanged(object sender, EventArgs e)
         {
@@ -84,63 +156,45 @@ namespace Aadarsha_Suppliers
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count < 1)
+            {
+                MessageBox.Show("Add atleast one product");
+            }
+            else
+            {
+                con.Open();
+                cmd = new SqlCommand("Insert into BillTbl values(" +Convert.ToInt32(bill.Text) + ",'" + c_name.Text + "','" + address.Text + "','" + phone.Text + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "','" + sub.Text + "','"+discount.Text+"','"+total.Text+"','"+paid.Text+"','"+balance.Text+"')",con);
+                cmd.ExecuteNonQuery();
+
+                for(int i=0; i<dataGridView1.Rows.Count; i++) {
+                SqlCommand cmd1 = new SqlCommand("Insert into billitemTbl values(" + Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "'," + Convert.ToString(dataGridView1.Rows[i].Cells[3].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "'," + Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "')", con);
+                    cmd1.ExecuteNonQuery();
+                }
+                MessageBox.Show("Bill saved");
+                con.Close();
+                LoadBillNo();
+                clear();
+                c_name.Text = "";
+                address.Text = "";
+                phone.Text = "";
+                sub.Text = "";
+                discount.Text = "";
+                total.Text = "";
+                paid.Text = "";
+                balance.Text = "";
+                dataGridView1.Rows.Clear();
+                product.Select();
+            }
             
-            string previousbill_no = "SELECT MAX(Bill_no) Bill_no FROM BillTbl";
-            string newbill_no = GenerateBillNo("Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True", previousbill_no);
-            bill_no = Convert.ToInt32(newbill_no);
-            string insertquery = "insert into BillTbl values('" + newbill_no + "','" + c_name.Text + "','" + address.Text + "','" + phone.Text + "','" + email.Text + "','" + product.Text + "'," + Convert.ToInt32(price.Text) + "," + Convert.ToInt32(quantity.Text) + ",'" + dateTimePicker1.Text.ToString() + "',"+subtotal+ ", "+ Convert.ToInt32(discount.Text) + ","+grand_total+"," + Convert.ToInt32(paid.Text) + "," + balance1 + ") ";
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand(insertquery, con);
-
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Invoice " + newbill_no +" Added: ");
-            //populate();
-            clear();
         }
         private void clear()
         {
-            c_name.Text="";
-            address.Text="";
-            phone.Text="";
-            email.Text="";
-            product.Text="";
+           product.Text="";
             price.Text="";
             quantity.Text="";
-            sub.Text = "";
-            discount.Text = "";
-            total.Text = "";
-            paid.Text = "";
-            balance.Text = "";
-            
+            amount.Text = "";           
         }
-        private string GenerateBillNo(string connection, string query)
-        {
-            string newbill_no = string.Empty;
-            using (SqlConnection con = new SqlConnection(connection))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    string i = dr[0].ToString();
-                    if (string.IsNullOrEmpty(i))
-                    {
-                        newbill_no = "1";
-                    }
-                    else
-                    {
-                        int j = Convert.ToInt32(i);
-                        j = j + 1;
-                        newbill_no = j.ToString();
-                    }
-                }
-                con.Close();
-            }
-
-            return string.Concat(newbill_no);
-        }
+        
         private void generate_bill_Click(object sender, EventArgs e)
         {
 
@@ -148,9 +202,117 @@ namespace Aadarsha_Suppliers
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (countrow.Text == "")
+            {
+                MessageBox.Show("Select Product to delete");
+            }
+            else
+            {
+                foreach(DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    if (!row.IsNewRow) dataGridView1.Rows.Remove(row);
+                }
+            }
+            button1.Text = "Add";
             clear();
+
         }
 
-       
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+        int i;
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            i = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[i];
+            product.Text = row.Cells[1].Value.ToString();
+            price.Text= row.Cells[2].Value.ToString();
+            quantity.Text= row.Cells[3].Value.ToString();
+            amount.Text= row.Cells[4].Value.ToString();
+           // dateTimePicker1.Value.to= row.Cells[6].Value.ToString();
+            countrow.Text= row.Cells[0].Value.ToString();
+            button1.Text = "Update";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+        public void CalAmount()
+        {
+            double a1, b1, i;
+            double.TryParse(price.Text, out a1);
+            double.TryParse(quantity.Text, out b1);
+            i = a1 * b1;
+            if (i > 0)
+            {
+                amount.Text = i.ToString("C").Remove(0, 1);
+            }
+
+        }
+
+        private void quantity_Leave(object sender, EventArgs e)
+        {
+            CalAmount();
+        }
+
+        private void price_Leave(object sender, EventArgs e)
+        {
+            CalAmount();
+        }
+        public void subTotal()
+        {
+            double sum = 0;
+            for(int i=0; i < dataGridView1.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+            }
+            sub.Text = sum.ToString();
+        }
+        public void CalDiscount()
+        {
+            double a1, b1, i;
+            double.TryParse(sub.Text, out a1);
+            double.TryParse(discount.Text, out b1);
+            i = a1 - b1;
+            if (i > 0)
+            {
+                total.Text = i.ToString("C").Remove(0, 1);
+            }
+
+        }
+
+        private void sub_TextChanged(object sender, EventArgs e)
+        {
+            CalDiscount();
+        }
+
+        private void discount_Leave(object sender, EventArgs e)
+        {
+            CalDiscount();
+        }
+        public void CalBalance()
+        {
+            double a1, b1, i;
+            double.TryParse(total.Text, out a1);
+            double.TryParse(paid.Text, out b1);
+            i = a1 - b1;
+            
+              balance.Text = i.ToString("C").Remove(0, 1);
+            
+
+        }
+
+        private void total_TextChanged(object sender, EventArgs e)
+        {
+            CalBalance();
+        }
+
+        private void paid_Leave(object sender, EventArgs e)
+        {
+            CalBalance();
+        }
     }
 }

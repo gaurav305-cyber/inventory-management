@@ -30,10 +30,12 @@ namespace Aadarsha_Suppliers
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(generate_bill));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.email = new System.Windows.Forms.TextBox();
+            this.bill = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.phone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,6 +45,11 @@ namespace Aadarsha_Suppliers
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.amount = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.countrow = new System.Windows.Forms.TextBox();
+            this.product = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,7 +59,6 @@ namespace Aadarsha_Suppliers
             this.label10 = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.product = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -72,6 +78,13 @@ namespace Aadarsha_Suppliers
             this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Sno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -102,7 +115,7 @@ namespace Aadarsha_Suppliers
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.email);
+            this.panel2.Controls.Add(this.bill);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.phone);
             this.panel2.Controls.Add(this.label5);
@@ -114,31 +127,33 @@ namespace Aadarsha_Suppliers
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1600, 102);
+            this.panel2.Size = new System.Drawing.Size(1600, 143);
             this.panel2.TabIndex = 1;
             // 
-            // email
+            // bill
             // 
-            this.email.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.email.Location = new System.Drawing.Point(1239, 52);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(257, 30);
-            this.email.TabIndex = 4;
+            this.bill.AutoSize = true;
+            this.bill.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bill.Location = new System.Drawing.Point(83, 3);
+            this.bill.Name = "bill";
+            this.bill.Size = new System.Drawing.Size(23, 32);
+            this.bill.TabIndex = 8;
+            this.bill.Text = "-";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(1176, 55);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(0, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 22);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Email";
+            this.label6.Size = new System.Drawing.Size(84, 25);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Bill No.";
             // 
             // phone
             // 
             this.phone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.phone.Location = new System.Drawing.Point(869, 52);
+            this.phone.Location = new System.Drawing.Point(868, 95);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(257, 30);
             this.phone.TabIndex = 6;
@@ -147,7 +162,7 @@ namespace Aadarsha_Suppliers
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(737, 55);
+            this.label5.Location = new System.Drawing.Point(736, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 22);
             this.label5.TabIndex = 5;
@@ -156,7 +171,7 @@ namespace Aadarsha_Suppliers
             // address
             // 
             this.address.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.address.Location = new System.Drawing.Point(448, 43);
+            this.address.Location = new System.Drawing.Point(447, 86);
             this.address.Multiline = true;
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(257, 51);
@@ -166,7 +181,7 @@ namespace Aadarsha_Suppliers
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(366, 55);
+            this.label4.Location = new System.Drawing.Point(365, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 22);
             this.label4.TabIndex = 3;
@@ -175,7 +190,7 @@ namespace Aadarsha_Suppliers
             // c_name
             // 
             this.c_name.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.c_name.Location = new System.Drawing.Point(83, 53);
+            this.c_name.Location = new System.Drawing.Point(82, 96);
             this.c_name.Name = "c_name";
             this.c_name.Size = new System.Drawing.Size(257, 30);
             this.c_name.TabIndex = 2;
@@ -184,7 +199,7 @@ namespace Aadarsha_Suppliers
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(21, 55);
+            this.label3.Location = new System.Drawing.Point(20, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 22);
             this.label3.TabIndex = 1;
@@ -194,7 +209,7 @@ namespace Aadarsha_Suppliers
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 12);
+            this.label2.Location = new System.Drawing.Point(11, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 25);
             this.label2.TabIndex = 0;
@@ -202,6 +217,11 @@ namespace Aadarsha_Suppliers
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.amount);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.countrow);
+            this.panel3.Controls.Add(this.product);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
@@ -211,15 +231,59 @@ namespace Aadarsha_Suppliers
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.price);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.product);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 171);
+            this.panel3.Location = new System.Drawing.Point(0, 212);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1600, 158);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(1461, 51);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(94, 39);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Clear";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // amount
+            // 
+            this.amount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.amount.Location = new System.Drawing.Point(750, 54);
+            this.amount.Name = "amount";
+            this.amount.Size = new System.Drawing.Size(131, 30);
+            this.amount.TabIndex = 20;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(677, 56);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(71, 22);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "Amount";
+            // 
+            // countrow
+            // 
+            this.countrow.Location = new System.Drawing.Point(1563, 56);
+            this.countrow.Name = "countrow";
+            this.countrow.Size = new System.Drawing.Size(25, 27);
+            this.countrow.TabIndex = 18;
+            // 
+            // product
+            // 
+            this.product.FormattingEnabled = true;
+            this.product.Location = new System.Drawing.Point(83, 54);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(245, 28);
+            this.product.TabIndex = 17;
             // 
             // label18
             // 
@@ -235,11 +299,11 @@ namespace Aadarsha_Suppliers
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(1494, 51);
+            this.button2.Location = new System.Drawing.Point(1361, 51);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 39);
             this.button2.TabIndex = 15;
-            this.button2.Text = "Clear";
+            this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -247,7 +311,7 @@ namespace Aadarsha_Suppliers
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(1336, 50);
+            this.button1.Location = new System.Drawing.Point(1261, 51);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 39);
             this.button1.TabIndex = 3;
@@ -257,7 +321,7 @@ namespace Aadarsha_Suppliers
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(1064, 57);
+            this.dateTimePicker1.Location = new System.Drawing.Point(981, 52);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker1.TabIndex = 14;
@@ -266,7 +330,7 @@ namespace Aadarsha_Suppliers
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(975, 56);
+            this.label11.Location = new System.Drawing.Point(892, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 22);
             this.label11.TabIndex = 13;
@@ -275,16 +339,17 @@ namespace Aadarsha_Suppliers
             // quantity
             // 
             this.quantity.FormattingEnabled = true;
-            this.quantity.Location = new System.Drawing.Point(805, 56);
+            this.quantity.Location = new System.Drawing.Point(584, 54);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(139, 28);
+            this.quantity.Size = new System.Drawing.Size(82, 28);
             this.quantity.TabIndex = 12;
+            this.quantity.Leave += new System.EventHandler(this.quantity_Leave);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(723, 54);
+            this.label10.Location = new System.Drawing.Point(502, 56);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 22);
             this.label10.TabIndex = 11;
@@ -293,28 +358,21 @@ namespace Aadarsha_Suppliers
             // price
             // 
             this.price.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.price.Location = new System.Drawing.Point(431, 53);
+            this.price.Location = new System.Drawing.Point(400, 52);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(257, 30);
+            this.price.Size = new System.Drawing.Size(93, 30);
             this.price.TabIndex = 10;
+            this.price.Leave += new System.EventHandler(this.price_Leave);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(369, 55);
+            this.label9.Location = new System.Drawing.Point(338, 54);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 22);
             this.label9.TabIndex = 9;
             this.label9.Text = "Price";
-            // 
-            // product
-            // 
-            this.product.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.product.Location = new System.Drawing.Point(83, 54);
-            this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(257, 30);
-            this.product.TabIndex = 8;
             // 
             // label8
             // 
@@ -341,9 +399,9 @@ namespace Aadarsha_Suppliers
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 329);
+            this.panel4.Location = new System.Drawing.Point(0, 370);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1600, 513);
+            this.panel4.Size = new System.Drawing.Size(1600, 472);
             this.panel4.TabIndex = 3;
             // 
             // panel6
@@ -364,7 +422,7 @@ namespace Aadarsha_Suppliers
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(1252, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(348, 513);
+            this.panel6.Size = new System.Drawing.Size(348, 472);
             this.panel6.TabIndex = 1;
             // 
             // button3
@@ -420,6 +478,7 @@ namespace Aadarsha_Suppliers
             this.paid.Size = new System.Drawing.Size(140, 30);
             this.paid.TabIndex = 24;
             this.paid.TextChanged += new System.EventHandler(this.paid_TextChanged);
+            this.paid.Leave += new System.EventHandler(this.paid_Leave);
             // 
             // label16
             // 
@@ -438,6 +497,7 @@ namespace Aadarsha_Suppliers
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(140, 30);
             this.total.TabIndex = 22;
+            this.total.TextChanged += new System.EventHandler(this.total_TextChanged);
             // 
             // label15
             // 
@@ -457,6 +517,7 @@ namespace Aadarsha_Suppliers
             this.discount.Size = new System.Drawing.Size(140, 30);
             this.discount.TabIndex = 20;
             this.discount.TextChanged += new System.EventHandler(this.discount_TextChanged);
+            this.discount.Leave += new System.EventHandler(this.discount_Leave);
             // 
             // label14
             // 
@@ -475,6 +536,7 @@ namespace Aadarsha_Suppliers
             this.sub.Name = "sub";
             this.sub.Size = new System.Drawing.Size(140, 30);
             this.sub.TabIndex = 18;
+            this.sub.TextChanged += new System.EventHandler(this.sub_TextChanged);
             // 
             // label13
             // 
@@ -502,21 +564,95 @@ namespace Aadarsha_Suppliers
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1252, 513);
+            this.panel5.Size = new System.Drawing.Size(1252, 472);
             this.panel5.TabIndex = 0;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sno,
+            this.product_name,
+            this.pp,
+            this.qty,
+            this.amt,
+            this.billno,
+            this.date});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1252, 513);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1252, 472);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            // 
+            // Sno
+            // 
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Sno.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Sno.FillWeight = 36.71941F;
+            this.Sno.HeaderText = "Sno";
+            this.Sno.MinimumWidth = 6;
+            this.Sno.Name = "Sno";
+            this.Sno.Width = 69;
+            // 
+            // product_name
+            // 
+            this.product_name.HeaderText = "Product Name";
+            this.product_name.MinimumWidth = 6;
+            this.product_name.Name = "product_name";
+            this.product_name.Width = 151;
+            // 
+            // pp
+            // 
+            this.pp.HeaderText = "Price";
+            this.pp.MinimumWidth = 6;
+            this.pp.Name = "pp";
+            this.pp.Width = 81;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "Quantity";
+            this.qty.MinimumWidth = 6;
+            this.qty.Name = "qty";
+            this.qty.Width = 105;
+            // 
+            // amt
+            // 
+            this.amt.HeaderText = "Amount";
+            this.amt.MinimumWidth = 6;
+            this.amt.Name = "amt";
+            // 
+            // billno
+            // 
+            this.billno.FillWeight = 98.28712F;
+            this.billno.HeaderText = "Bill No";
+            this.billno.MinimumWidth = 6;
+            this.billno.Name = "billno";
+            this.billno.Width = 99;
+            // 
+            // date
+            // 
+            this.date.FillWeight = 131.5267F;
+            this.date.HeaderText = "Date";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.Width = 76;
             // 
             // generate_bill
             // 
@@ -554,8 +690,6 @@ namespace Aadarsha_Suppliers
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox address;
@@ -565,7 +699,6 @@ namespace Aadarsha_Suppliers
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox product;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
@@ -591,5 +724,19 @@ namespace Aadarsha_Suppliers
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label bill;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox product;
+        private System.Windows.Forms.TextBox countrow;
+        private System.Windows.Forms.TextBox amount;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn billno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
     }
 }
