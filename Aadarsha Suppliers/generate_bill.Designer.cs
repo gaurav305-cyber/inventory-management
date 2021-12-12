@@ -30,8 +30,8 @@ namespace Aadarsha_Suppliers
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(generate_bill));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -102,6 +102,7 @@ namespace Aadarsha_Suppliers
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1600, 69);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -112,6 +113,7 @@ namespace Aadarsha_Suppliers
             this.label1.Size = new System.Drawing.Size(204, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Generate Bill";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -129,6 +131,7 @@ namespace Aadarsha_Suppliers
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1600, 143);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // bill
             // 
@@ -139,16 +142,18 @@ namespace Aadarsha_Suppliers
             this.bill.Size = new System.Drawing.Size(23, 32);
             this.bill.TabIndex = 8;
             this.bill.Text = "-";
+            this.bill.Click += new System.EventHandler(this.bill_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(0, 10);
+            this.label6.Location = new System.Drawing.Point(3, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 25);
             this.label6.TabIndex = 7;
             this.label6.Text = "Bill No.";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // phone
             // 
@@ -157,6 +162,7 @@ namespace Aadarsha_Suppliers
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(257, 30);
             this.phone.TabIndex = 6;
+            this.phone.TextChanged += new System.EventHandler(this.phone_TextChanged);
             // 
             // label5
             // 
@@ -167,6 +173,7 @@ namespace Aadarsha_Suppliers
             this.label5.Size = new System.Drawing.Size(126, 22);
             this.label5.TabIndex = 5;
             this.label5.Text = "Phone Number";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // address
             // 
@@ -176,6 +183,7 @@ namespace Aadarsha_Suppliers
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(257, 51);
             this.address.TabIndex = 4;
+            this.address.TextChanged += new System.EventHandler(this.address_TextChanged);
             // 
             // label4
             // 
@@ -186,6 +194,7 @@ namespace Aadarsha_Suppliers
             this.label4.Size = new System.Drawing.Size(76, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "Address";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // c_name
             // 
@@ -194,6 +203,7 @@ namespace Aadarsha_Suppliers
             this.c_name.Name = "c_name";
             this.c_name.Size = new System.Drawing.Size(257, 30);
             this.c_name.TabIndex = 2;
+            this.c_name.TextChanged += new System.EventHandler(this.c_name_TextChanged);
             // 
             // label3
             // 
@@ -204,6 +214,7 @@ namespace Aadarsha_Suppliers
             this.label3.Size = new System.Drawing.Size(56, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Name";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -214,6 +225,7 @@ namespace Aadarsha_Suppliers
             this.label2.Size = new System.Drawing.Size(184, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Customer Details";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel3
             // 
@@ -259,6 +271,7 @@ namespace Aadarsha_Suppliers
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(131, 30);
             this.amount.TabIndex = 20;
+            this.amount.TextChanged += new System.EventHandler(this.amount_TextChanged);
             // 
             // label20
             // 
@@ -269,6 +282,7 @@ namespace Aadarsha_Suppliers
             this.label20.Size = new System.Drawing.Size(71, 22);
             this.label20.TabIndex = 19;
             this.label20.Text = "Amount";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // countrow
             // 
@@ -276,6 +290,7 @@ namespace Aadarsha_Suppliers
             this.countrow.Name = "countrow";
             this.countrow.Size = new System.Drawing.Size(25, 27);
             this.countrow.TabIndex = 18;
+            this.countrow.TextChanged += new System.EventHandler(this.countrow_TextChanged);
             // 
             // product
             // 
@@ -284,6 +299,7 @@ namespace Aadarsha_Suppliers
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(245, 28);
             this.product.TabIndex = 17;
+            this.product.SelectedIndexChanged += new System.EventHandler(this.product_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -294,6 +310,7 @@ namespace Aadarsha_Suppliers
             this.label18.Size = new System.Drawing.Size(166, 25);
             this.label18.TabIndex = 16;
             this.label18.Text = "Added Product";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // button2
             // 
@@ -325,6 +342,7 @@ namespace Aadarsha_Suppliers
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker1.TabIndex = 14;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label11
             // 
@@ -335,6 +353,7 @@ namespace Aadarsha_Suppliers
             this.label11.Size = new System.Drawing.Size(83, 22);
             this.label11.TabIndex = 13;
             this.label11.Text = "Bill Date";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // quantity
             // 
@@ -343,6 +362,7 @@ namespace Aadarsha_Suppliers
             this.quantity.Name = "quantity";
             this.quantity.Size = new System.Drawing.Size(82, 28);
             this.quantity.TabIndex = 12;
+            this.quantity.SelectedIndexChanged += new System.EventHandler(this.quantity_SelectedIndexChanged);
             this.quantity.Leave += new System.EventHandler(this.quantity_Leave);
             // 
             // label10
@@ -354,6 +374,7 @@ namespace Aadarsha_Suppliers
             this.label10.Size = new System.Drawing.Size(76, 22);
             this.label10.TabIndex = 11;
             this.label10.Text = "Quantity";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // price
             // 
@@ -362,6 +383,7 @@ namespace Aadarsha_Suppliers
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(93, 30);
             this.price.TabIndex = 10;
+            this.price.TextChanged += new System.EventHandler(this.price_TextChanged);
             this.price.Leave += new System.EventHandler(this.price_Leave);
             // 
             // label9
@@ -373,6 +395,7 @@ namespace Aadarsha_Suppliers
             this.label9.Size = new System.Drawing.Size(52, 22);
             this.label9.TabIndex = 9;
             this.label9.Text = "Price";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -383,6 +406,7 @@ namespace Aadarsha_Suppliers
             this.label8.Size = new System.Drawing.Size(56, 22);
             this.label8.TabIndex = 7;
             this.label8.Text = "Name";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -393,6 +417,7 @@ namespace Aadarsha_Suppliers
             this.label7.Size = new System.Drawing.Size(167, 25);
             this.label7.TabIndex = 1;
             this.label7.Text = "Product Details";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel4
             // 
@@ -403,6 +428,7 @@ namespace Aadarsha_Suppliers
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1600, 472);
             this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel6
             // 
@@ -424,6 +450,7 @@ namespace Aadarsha_Suppliers
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(348, 472);
             this.panel6.TabIndex = 1;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // button3
             // 
@@ -437,6 +464,7 @@ namespace Aadarsha_Suppliers
             this.button3.Text = "Print";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -459,6 +487,7 @@ namespace Aadarsha_Suppliers
             this.balance.Name = "balance";
             this.balance.Size = new System.Drawing.Size(140, 30);
             this.balance.TabIndex = 26;
+            this.balance.TextChanged += new System.EventHandler(this.balance_TextChanged);
             // 
             // label17
             // 
@@ -469,6 +498,7 @@ namespace Aadarsha_Suppliers
             this.label17.Size = new System.Drawing.Size(86, 23);
             this.label17.TabIndex = 25;
             this.label17.Text = "Balance:";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // paid
             // 
@@ -489,6 +519,7 @@ namespace Aadarsha_Suppliers
             this.label16.Size = new System.Drawing.Size(55, 23);
             this.label16.TabIndex = 23;
             this.label16.Text = "Paid:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // total
             // 
@@ -508,6 +539,7 @@ namespace Aadarsha_Suppliers
             this.label15.Size = new System.Drawing.Size(119, 23);
             this.label15.TabIndex = 21;
             this.label15.Text = "Grand Total:";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // discount
             // 
@@ -528,6 +560,7 @@ namespace Aadarsha_Suppliers
             this.label14.Size = new System.Drawing.Size(162, 23);
             this.label14.TabIndex = 19;
             this.label14.Text = "Discount Amount:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // sub
             // 
@@ -547,6 +580,7 @@ namespace Aadarsha_Suppliers
             this.label13.Size = new System.Drawing.Size(98, 23);
             this.label13.TabIndex = 17;
             this.label13.Text = "Sub Total:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -557,6 +591,7 @@ namespace Aadarsha_Suppliers
             this.label12.Size = new System.Drawing.Size(198, 25);
             this.label12.TabIndex = 16;
             this.label12.Text = "Calculation Details";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel5
             // 
@@ -566,6 +601,7 @@ namespace Aadarsha_Suppliers
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1252, 472);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // dataGridView1
             // 
@@ -573,14 +609,14 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sno,
@@ -598,13 +634,14 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1252, 472);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // Sno
             // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Sno.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Sno.DefaultCellStyle = dataGridViewCellStyle2;
             this.Sno.FillWeight = 36.71941F;
             this.Sno.HeaderText = "Sno";
             this.Sno.MinimumWidth = 6;

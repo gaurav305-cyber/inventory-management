@@ -106,5 +106,15 @@ namespace Aadarsha_Suppliers
             click.BackColor= Color.FromArgb(0, 128, 255);
             click.ForeColor = Color.FromArgb(255,255,255);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button_settings(button5, null);
+            this.panelFormLoader.Controls.Clear();
+            bill_history Frmmanage_vrb = new bill_history() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.panelFormLoader.Controls.Add(Frmmanage_vrb);
+            Frmmanage_vrb.Show();
+        }
     }
 }
