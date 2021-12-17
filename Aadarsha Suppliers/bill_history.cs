@@ -99,6 +99,21 @@ namespace Aadarsha_Suppliers
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            update_bill updt = new update_bill();
+            updt.bill_no.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            updt.c_name.Text= this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            updt.address.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            updt.phone.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            updt.dateTimePicker1.Text= this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            updt.sub.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            updt.discount.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            updt.total.Text = this.dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            updt.paid.Text = this.dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            updt.balance.Text = this.dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            updt.Show();
+            
+
+
 
         }
     }
