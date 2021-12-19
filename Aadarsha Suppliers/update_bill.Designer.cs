@@ -30,7 +30,6 @@ namespace Aadarsha_Suppliers
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_bill));
             this.balance = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -44,23 +43,16 @@ namespace Aadarsha_Suppliers
             this.label20 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.countrow = new System.Windows.Forms.TextBox();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.product_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.quantity = new System.Windows.Forms.ComboBox();
             this.price = new System.Windows.Forms.TextBox();
             this.sub = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.billno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -202,34 +194,6 @@ namespace Aadarsha_Suppliers
             this.countrow.Size = new System.Drawing.Size(25, 27);
             this.countrow.TabIndex = 18;
             // 
-            // date
-            // 
-            this.date.FillWeight = 131.5267F;
-            this.date.HeaderText = "Date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.Width = 76;
-            // 
-            // amt
-            // 
-            this.amt.HeaderText = "Amount";
-            this.amt.MinimumWidth = 6;
-            this.amt.Name = "amt";
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "Quantity";
-            this.qty.MinimumWidth = 6;
-            this.qty.Name = "qty";
-            this.qty.Width = 105;
-            // 
-            // pp
-            // 
-            this.pp.HeaderText = "Price";
-            this.pp.MinimumWidth = 6;
-            this.pp.Name = "pp";
-            this.pp.Width = 81;
-            // 
             // product
             // 
             this.product.FormattingEnabled = true;
@@ -277,23 +241,6 @@ namespace Aadarsha_Suppliers
             this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker1.TabIndex = 14;
             // 
-            // product_name
-            // 
-            this.product_name.HeaderText = "Product Name";
-            this.product_name.MinimumWidth = 6;
-            this.product_name.Name = "product_name";
-            this.product_name.Width = 151;
-            // 
-            // Sno
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Sno.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Sno.FillWeight = 36.71941F;
-            this.Sno.HeaderText = "Sno";
-            this.Sno.MinimumWidth = 6;
-            this.Sno.Name = "Sno";
-            this.Sno.Width = 69;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -334,39 +281,22 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sno,
-            this.product_name,
-            this.pp,
-            this.qty,
-            this.amt,
-            this.billno,
-            this.date});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 360);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1141, 800);
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 440);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // billno
-            // 
-            this.billno.FillWeight = 98.28712F;
-            this.billno.HeaderText = "Bill No";
-            this.billno.MinimumWidth = 6;
-            this.billno.Name = "billno";
-            this.billno.Width = 99;
             // 
             // panel5
             // 
@@ -653,6 +583,7 @@ namespace Aadarsha_Suppliers
             this.Name = "update_bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "update_bill";
+            this.Load += new System.EventHandler(this.update_bill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -676,17 +607,10 @@ namespace Aadarsha_Suppliers
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox countrow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pp;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sno;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn billno;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
