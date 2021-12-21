@@ -29,6 +29,7 @@ namespace Aadarsha_Suppliers
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bill_history));
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@ namespace Aadarsha_Suppliers
             this.tb = new System.Windows.Forms.TextBox();
             this.ts = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +63,7 @@ namespace Aadarsha_Suppliers
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 8;
+            this.tableLayoutPanel1.ColumnCount = 9;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.51469F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.548531F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.39893F));
@@ -69,7 +71,9 @@ namespace Aadarsha_Suppliers
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.4675F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.69991F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+            this.tableLayoutPanel1.Controls.Add(this.button4, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
@@ -89,7 +93,7 @@ namespace Aadarsha_Suppliers
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(1093, 3);
+            this.button3.Location = new System.Drawing.Point(1071, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 39);
             this.button3.TabIndex = 3;
@@ -102,7 +106,7 @@ namespace Aadarsha_Suppliers
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(574, 11);
+            this.label3.Location = new System.Drawing.Point(562, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 23);
             this.label3.TabIndex = 5;
@@ -124,7 +128,7 @@ namespace Aadarsha_Suppliers
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(194, 11);
+            this.label2.Location = new System.Drawing.Point(189, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 23);
             this.label2.TabIndex = 1;
@@ -134,7 +138,7 @@ namespace Aadarsha_Suppliers
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker2.Location = new System.Drawing.Point(611, 9);
+            this.dateTimePicker2.Location = new System.Drawing.Point(599, 9);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker2.TabIndex = 4;
@@ -143,7 +147,7 @@ namespace Aadarsha_Suppliers
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Location = new System.Drawing.Point(254, 9);
+            this.dateTimePicker1.Location = new System.Drawing.Point(249, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker1.TabIndex = 3;
@@ -152,7 +156,7 @@ namespace Aadarsha_Suppliers
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(889, 3);
+            this.button2.Location = new System.Drawing.Point(871, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 39);
             this.button2.TabIndex = 6;
@@ -163,10 +167,11 @@ namespace Aadarsha_Suppliers
             // counter
             // 
             this.counter.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.counter.Location = new System.Drawing.Point(1274, 9);
+            this.counter.Location = new System.Drawing.Point(1252, 9);
             this.counter.Name = "counter";
-            this.counter.Size = new System.Drawing.Size(103, 27);
+            this.counter.Size = new System.Drawing.Size(63, 27);
             this.counter.TabIndex = 7;
+            this.counter.Visible = false;
             // 
             // dataGridView1
             // 
@@ -217,6 +222,19 @@ namespace Aadarsha_Suppliers
             this.label5.TabIndex = 6;
             this.label5.Text = "Total Sales";
             // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(1333, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 39);
+            this.button4.TabIndex = 8;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // bill_history
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -259,5 +277,6 @@ namespace Aadarsha_Suppliers
         private System.Windows.Forms.TextBox tb;
         private System.Windows.Forms.TextBox ts;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button4;
     }
 }

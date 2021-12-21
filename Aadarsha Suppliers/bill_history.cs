@@ -29,7 +29,7 @@ namespace Aadarsha_Suppliers
         private void button2_Click(object sender, EventArgs e)
         {
             con.Open();
-            da = new SqlDataAdapter("select * from BillTbl where Bill_Date between '"+dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "' orderr by Bill_no asc", con);
+            da = new SqlDataAdapter("select * from BillTbl where Bill_Date between '"+dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "' order by Bill_no asc", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "BillTbl");
             dataGridView1.DataSource = ds.Tables["BillTbl"];
@@ -115,6 +115,12 @@ namespace Aadarsha_Suppliers
 
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fillgrid();
+            totalsale();
         }
     }
 }

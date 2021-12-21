@@ -111,6 +111,8 @@ namespace Aadarsha_Suppliers
             this.paid.Name = "paid";
             this.paid.Size = new System.Drawing.Size(140, 30);
             this.paid.TabIndex = 24;
+            this.paid.TextChanged += new System.EventHandler(this.paid_TextChanged);
+            this.paid.Leave += new System.EventHandler(this.paid_Leave);
             // 
             // label16
             // 
@@ -129,6 +131,7 @@ namespace Aadarsha_Suppliers
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(140, 30);
             this.total.TabIndex = 22;
+            this.total.TextChanged += new System.EventHandler(this.total_TextChanged);
             // 
             // label15
             // 
@@ -147,6 +150,8 @@ namespace Aadarsha_Suppliers
             this.discount.Name = "discount";
             this.discount.Size = new System.Drawing.Size(140, 30);
             this.discount.TabIndex = 20;
+            this.discount.TextChanged += new System.EventHandler(this.discount_TextChanged);
+            this.discount.Leave += new System.EventHandler(this.discount_Leave);
             // 
             // button5
             // 
@@ -222,6 +227,7 @@ namespace Aadarsha_Suppliers
             this.button2.TabIndex = 15;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -233,6 +239,7 @@ namespace Aadarsha_Suppliers
             this.button1.TabIndex = 3;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
             // 
@@ -258,6 +265,7 @@ namespace Aadarsha_Suppliers
             this.quantity.Name = "quantity";
             this.quantity.Size = new System.Drawing.Size(82, 28);
             this.quantity.TabIndex = 12;
+            this.quantity.Leave += new System.EventHandler(this.quantity_Leave);
             // 
             // price
             // 
@@ -266,6 +274,7 @@ namespace Aadarsha_Suppliers
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(93, 30);
             this.price.TabIndex = 10;
+            this.price.Leave += new System.EventHandler(this.price_Leave);
             // 
             // sub
             // 
@@ -274,6 +283,7 @@ namespace Aadarsha_Suppliers
             this.sub.Name = "sub";
             this.sub.Size = new System.Drawing.Size(140, 30);
             this.sub.TabIndex = 18;
+            this.sub.TextChanged += new System.EventHandler(this.sub_TextChanged);
             // 
             // dataGridView1
             // 
@@ -297,6 +307,8 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1141, 440);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
             // panel5
             // 
@@ -525,6 +537,7 @@ namespace Aadarsha_Suppliers
             this.button4.Text = "Save";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel4
             // 
@@ -583,7 +596,10 @@ namespace Aadarsha_Suppliers
             this.Name = "update_bill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "update_bill";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.update_bill_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.update_bill_FormClosed);
             this.Load += new System.EventHandler(this.update_bill_Load);
+            this.Leave += new System.EventHandler(this.update_bill_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
