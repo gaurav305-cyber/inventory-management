@@ -446,9 +446,9 @@ namespace Aadarsha_Suppliers
             this.panel6.Controls.Add(this.label13);
             this.panel6.Controls.Add(this.label12);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(1252, 0);
+            this.panel6.Location = new System.Drawing.Point(1082, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(348, 472);
+            this.panel6.Size = new System.Drawing.Size(518, 472);
             this.panel6.TabIndex = 1;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -457,7 +457,7 @@ namespace Aadarsha_Suppliers
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(196, 425);
+            this.button3.Location = new System.Drawing.Point(249, 409);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 39);
             this.button3.TabIndex = 17;
@@ -471,7 +471,7 @@ namespace Aadarsha_Suppliers
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(62, 425);
+            this.button4.Location = new System.Drawing.Point(109, 409);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(113, 39);
             this.button4.TabIndex = 16;
@@ -485,7 +485,7 @@ namespace Aadarsha_Suppliers
             this.balance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.balance.Location = new System.Drawing.Point(181, 341);
             this.balance.Name = "balance";
-            this.balance.Size = new System.Drawing.Size(140, 30);
+            this.balance.Size = new System.Drawing.Size(223, 30);
             this.balance.TabIndex = 26;
             this.balance.TextChanged += new System.EventHandler(this.balance_TextChanged);
             // 
@@ -505,7 +505,7 @@ namespace Aadarsha_Suppliers
             this.paid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.paid.Location = new System.Drawing.Point(181, 275);
             this.paid.Name = "paid";
-            this.paid.Size = new System.Drawing.Size(140, 30);
+            this.paid.Size = new System.Drawing.Size(223, 30);
             this.paid.TabIndex = 24;
             this.paid.TextChanged += new System.EventHandler(this.paid_TextChanged);
             this.paid.Leave += new System.EventHandler(this.paid_Leave);
@@ -526,7 +526,7 @@ namespace Aadarsha_Suppliers
             this.total.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.total.Location = new System.Drawing.Point(181, 212);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(140, 30);
+            this.total.Size = new System.Drawing.Size(223, 30);
             this.total.TabIndex = 22;
             this.total.TextChanged += new System.EventHandler(this.total_TextChanged);
             // 
@@ -546,7 +546,7 @@ namespace Aadarsha_Suppliers
             this.discount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.discount.Location = new System.Drawing.Point(181, 148);
             this.discount.Name = "discount";
-            this.discount.Size = new System.Drawing.Size(140, 30);
+            this.discount.Size = new System.Drawing.Size(223, 30);
             this.discount.TabIndex = 20;
             this.discount.TextChanged += new System.EventHandler(this.discount_TextChanged);
             this.discount.Leave += new System.EventHandler(this.discount_Leave);
@@ -567,7 +567,7 @@ namespace Aadarsha_Suppliers
             this.sub.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sub.Location = new System.Drawing.Point(181, 88);
             this.sub.Name = "sub";
-            this.sub.Size = new System.Drawing.Size(140, 30);
+            this.sub.Size = new System.Drawing.Size(223, 30);
             this.sub.TabIndex = 18;
             this.sub.TextChanged += new System.EventHandler(this.sub_TextChanged);
             // 
@@ -599,7 +599,7 @@ namespace Aadarsha_Suppliers
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1252, 472);
+            this.panel5.Size = new System.Drawing.Size(1082, 472);
             this.panel5.TabIndex = 0;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
@@ -632,7 +632,7 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1252, 472);
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 472);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);

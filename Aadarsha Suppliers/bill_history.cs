@@ -24,6 +24,8 @@ namespace Aadarsha_Suppliers
         {
             fillgrid();
             totalsale();
+            totalReceived();
+            totalRemaining();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,6 +37,8 @@ namespace Aadarsha_Suppliers
             dataGridView1.DataSource = ds.Tables["BillTbl"];
             con.Close();
             totalsale();
+            totalReceived();
+            totalRemaining();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,6 +73,8 @@ namespace Aadarsha_Suppliers
                     con.Close();
                     fillgrid();
                     totalsale();
+                    totalReceived();
+                    totalRemaining();
                 }
                 else if(dialogResult == DialogResult.No)
                 {
@@ -96,6 +102,26 @@ namespace Aadarsha_Suppliers
             }
             ts.Text = sum.ToString();
         }
+        public void totalReceived()
+        {
+            tb.Text = (dataGridView1.Rows.Count - 1).ToString();
+            double sum = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[8].Value);
+            }
+            tr.Text = sum.ToString();
+        }
+        public void totalRemaining()
+        {
+            tb.Text = (dataGridView1.Rows.Count - 1).ToString();
+            double sum = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; ++i)
+            {
+                sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[9].Value);
+            }
+            tl.Text = sum.ToString();
+        }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -121,6 +147,13 @@ namespace Aadarsha_Suppliers
         {
             fillgrid();
             totalsale();
+            totalReceived();
+            totalRemaining();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

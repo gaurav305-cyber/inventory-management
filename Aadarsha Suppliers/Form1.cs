@@ -116,5 +116,15 @@ namespace Aadarsha_Suppliers
             this.panelFormLoader.Controls.Add(Frmmanage_vrb);
             Frmmanage_vrb.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button_settings(button1, null);
+            this.panelFormLoader.Controls.Clear();
+            Dashboard Frmmanage_vrb = new Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.panelFormLoader.Controls.Add(Frmmanage_vrb);
+            Frmmanage_vrb.Show();
+        }
     }
 }

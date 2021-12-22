@@ -26,3 +26,4 @@ D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha Suppli
 D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.generate_bill.resources
 D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.bill_history.resources
 D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.update_bill.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\netcoreapp3.1\Aadarsha_Suppliers.Dashboard.resources
