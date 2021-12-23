@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Update="billprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="bill_history.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -16,8 +22,16 @@
     <Compile Update="manage_product.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="print.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="update_bill.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="printbill.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

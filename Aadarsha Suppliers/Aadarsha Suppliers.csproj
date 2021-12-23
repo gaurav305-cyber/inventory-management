@@ -5,13 +5,50 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Aadarsha_Suppliers</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
+    <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\</ReferencePath>
   </PropertyGroup>
+    
+ 
 
   <ItemGroup>
+    
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1484.0" />
+    
+    <PackageReference Include="Microsoft.ReportViewer.Common.v12" Version="12.0.0.1" />
+    
+    <PackageReference Include="Microsoft.ReportViewer.WinForms.v12" Version="12.0.0.1" />
+    
+    <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
+    
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.15" />
+    
+    <PackageReference Include="Stimulsoft.Reports.Engine" Version="2022.1.2" />
+    
+    <PackageReference Include="Stimulsoft.Reports.Engine.NetCore" Version="2022.1.2" />
+    
+    <PackageReference Include="Stimulsoft.Reports.Net" Version="2022.1.2" />
+    
+    <PackageReference Include="Stimulsoft.Reports.Web.NetCore" Version="2022.1.2" />
+    
+    <PackageReference Include="Stimulsoft.Reports.Wpf" Version="2022.1.2" />
+    
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
+    
+ 
 
   <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+                      
+
+  <ItemGroup>
+    <Compile Update="printbill.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>printbill.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -24,6 +61,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="printbill.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>printbill.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{c0c07587-41a7-46c8-8fbd-3f9c8ebe2ddc}" />
   </ItemGroup>
 
 </Project>

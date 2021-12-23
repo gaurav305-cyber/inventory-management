@@ -1,0 +1,15 @@
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha Suppliers.csproj.AssemblyReference.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.bill_history.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.Dashboard.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.Form1.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.generate_bill.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.manage_product.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.print.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.Print_Bill.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.Properties.Resources.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha_Suppliers.update_bill.resources
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha Suppliers.csproj.GenerateResource.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha Suppliers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha Suppliers.AssemblyInfoInputs.cache
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha Suppliers.AssemblyInfo.cs
+D:\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\net472\Aadarsha Suppliers.csproj.CoreCompileInputs.cache

@@ -46,6 +46,46 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.ReportViewer.Common.v12": {
+              "target": "Package",
+              "version": "[12.0.0.1, )"
+            },
+            "Microsoft.ReportViewer.WinForms.v12": {
+              "target": "Package",
+              "version": "[12.0.0.1, )"
+            },
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[150.1484.0, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[14.0.1016.290, )"
+            },
+            "ReportViewerCore.NETCore": {
+              "target": "Package",
+              "version": "[15.1.15, )"
+            },
+            "Stimulsoft.Reports.Engine": {
+              "target": "Package",
+              "version": "[2022.1.2, )"
+            },
+            "Stimulsoft.Reports.Engine.NetCore": {
+              "target": "Package",
+              "version": "[2022.1.2, )"
+            },
+            "Stimulsoft.Reports.Net": {
+              "target": "Package",
+              "version": "[2022.1.2, )"
+            },
+            "Stimulsoft.Reports.Web.NetCore": {
+              "target": "Package",
+              "version": "[2022.1.2, )"
+            },
+            "Stimulsoft.Reports.Wpf": {
+              "target": "Package",
+              "version": "[2022.1.2, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
@@ -69,7 +109,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
