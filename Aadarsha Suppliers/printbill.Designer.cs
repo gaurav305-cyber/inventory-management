@@ -20,9 +20,9 @@ namespace Aadarsha_Suppliers {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("printbill")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PrintBill")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class printbill : global::System.Data.DataSet {
+    public partial class PrintBill : global::System.Data.DataSet {
         
         private PrintBillDataTable tablePrintBill;
         
@@ -30,7 +30,7 @@ namespace Aadarsha_Suppliers {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public printbill() {
+        public PrintBill() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Aadarsha_Suppliers {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected printbill(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PrintBill(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -79,7 +79,7 @@ namespace Aadarsha_Suppliers {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PrintBillDataTable PrintBill {
+        public PrintBillDataTable _PrintBill {
             get {
                 return this.tablePrintBill;
             }
@@ -127,7 +127,7 @@ namespace Aadarsha_Suppliers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            printbill cln = ((printbill)(base.Clone()));
+            PrintBill cln = ((PrintBill)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Aadarsha_Suppliers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "printbill";
+            this.DataSetName = "PrintBill";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/printbill.xsd";
+            this.Namespace = "http://tempuri.org/PrintBill.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablePrintBill = new PrintBillDataTable();
@@ -210,7 +210,7 @@ namespace Aadarsha_Suppliers {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePrintBill() {
+        private bool ShouldSerialize_PrintBill() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Aadarsha_Suppliers {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            printbill ds = new printbill();
+            PrintBill ds = new PrintBill();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,27 +279,27 @@ namespace Aadarsha_Suppliers {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PrintBillDataTable : global::System.Data.TypedTableBase<PrintBillRow> {
             
-            private global::System.Data.DataColumn columnBillNoH;
+            private global::System.Data.DataColumn columnBill_no;
             
-            private global::System.Data.DataColumn columnCustomer_NameH;
+            private global::System.Data.DataColumn columnCustomer_Name;
             
-            private global::System.Data.DataColumn columnAddressH;
+            private global::System.Data.DataColumn columnAddress;
             
-            private global::System.Data.DataColumn columnPhone_NumberH;
+            private global::System.Data.DataColumn columnPhone_Number;
             
-            private global::System.Data.DataColumn columnBill_DateH;
+            private global::System.Data.DataColumn columnBill_Date;
             
-            private global::System.Data.DataColumn columnSub_TotalH;
+            private global::System.Data.DataColumn columnSub_Total;
             
-            private global::System.Data.DataColumn columnDiscountH;
+            private global::System.Data.DataColumn columnDiscount;
             
-            private global::System.Data.DataColumn columnTotalH;
+            private global::System.Data.DataColumn columnTotal;
             
-            private global::System.Data.DataColumn columnPaidH;
+            private global::System.Data.DataColumn columnPaid;
             
-            private global::System.Data.DataColumn columnBalanceH;
+            private global::System.Data.DataColumn columnBalance;
             
-            private global::System.Data.DataColumn columnLast_UpdatedH;
+            private global::System.Data.DataColumn columnLast_Updated;
             
             private global::System.Data.DataColumn columnSno;
             
@@ -309,7 +309,7 @@ namespace Aadarsha_Suppliers {
             
             private global::System.Data.DataColumn columnPrice;
             
-            private global::System.Data.DataColumn columnBill_no;
+            private global::System.Data.DataColumn columnBill_noR;
             
             private global::System.Data.DataColumn columnAmount;
             
@@ -350,89 +350,89 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BillNoHColumn {
+            public global::System.Data.DataColumn Bill_noColumn {
                 get {
-                    return this.columnBillNoH;
+                    return this.columnBill_no;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Customer_NameHColumn {
+            public global::System.Data.DataColumn Customer_NameColumn {
                 get {
-                    return this.columnCustomer_NameH;
+                    return this.columnCustomer_Name;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AddressHColumn {
+            public global::System.Data.DataColumn AddressColumn {
                 get {
-                    return this.columnAddressH;
+                    return this.columnAddress;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Phone_NumberHColumn {
+            public global::System.Data.DataColumn Phone_NumberColumn {
                 get {
-                    return this.columnPhone_NumberH;
+                    return this.columnPhone_Number;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Bill_DateHColumn {
+            public global::System.Data.DataColumn Bill_DateColumn {
                 get {
-                    return this.columnBill_DateH;
+                    return this.columnBill_Date;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Sub_TotalHColumn {
+            public global::System.Data.DataColumn Sub_TotalColumn {
                 get {
-                    return this.columnSub_TotalH;
+                    return this.columnSub_Total;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DiscountHColumn {
+            public global::System.Data.DataColumn DiscountColumn {
                 get {
-                    return this.columnDiscountH;
+                    return this.columnDiscount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TotalHColumn {
+            public global::System.Data.DataColumn TotalColumn {
                 get {
-                    return this.columnTotalH;
+                    return this.columnTotal;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PaidHColumn {
+            public global::System.Data.DataColumn PaidColumn {
                 get {
-                    return this.columnPaidH;
+                    return this.columnPaid;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BalanceHColumn {
+            public global::System.Data.DataColumn BalanceColumn {
                 get {
-                    return this.columnBalanceH;
+                    return this.columnBalance;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Last_UpdatedHColumn {
+            public global::System.Data.DataColumn Last_UpdatedColumn {
                 get {
-                    return this.columnLast_UpdatedH;
+                    return this.columnLast_Updated;
                 }
             }
             
@@ -470,9 +470,9 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Bill_noColumn {
+            public global::System.Data.DataColumn Bill_noRColumn {
                 get {
-                    return this.columnBill_no;
+                    return this.columnBill_noR;
                 }
             }
             
@@ -530,42 +530,42 @@ namespace Aadarsha_Suppliers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PrintBillRow AddPrintBillRow(
-                        int BillNoH, 
-                        string Customer_NameH, 
-                        string AddressH, 
-                        string Phone_NumberH, 
-                        System.DateTime Bill_DateH, 
-                        decimal Sub_TotalH, 
-                        decimal DiscountH, 
-                        decimal TotalH, 
-                        decimal PaidH, 
-                        decimal BalanceH, 
-                        System.DateTime Last_UpdatedH, 
+                        int Bill_no, 
+                        string Customer_Name, 
+                        string Address, 
+                        string Phone_Number, 
+                        System.DateTime Bill_Date, 
+                        decimal Sub_Total, 
+                        decimal Discount, 
+                        decimal Total, 
+                        decimal Paid, 
+                        decimal Balance, 
+                        System.DateTime Last_Updated, 
                         int Sno, 
                         string Product, 
                         int Quantity, 
                         decimal Price, 
-                        int Bill_no, 
+                        int Bill_noR, 
                         decimal Amount, 
                         System.DateTime Date) {
                 PrintBillRow rowPrintBillRow = ((PrintBillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BillNoH,
-                        Customer_NameH,
-                        AddressH,
-                        Phone_NumberH,
-                        Bill_DateH,
-                        Sub_TotalH,
-                        DiscountH,
-                        TotalH,
-                        PaidH,
-                        BalanceH,
-                        Last_UpdatedH,
+                        Bill_no,
+                        Customer_Name,
+                        Address,
+                        Phone_Number,
+                        Bill_Date,
+                        Sub_Total,
+                        Discount,
+                        Total,
+                        Paid,
+                        Balance,
+                        Last_Updated,
                         Sno,
                         Product,
                         Quantity,
                         Price,
-                        Bill_no,
+                        Bill_noR,
                         Amount,
                         Date};
                 rowPrintBillRow.ItemArray = columnValuesArray;
@@ -590,22 +590,22 @@ namespace Aadarsha_Suppliers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnBillNoH = base.Columns["BillNoH"];
-                this.columnCustomer_NameH = base.Columns["Customer_NameH"];
-                this.columnAddressH = base.Columns["AddressH"];
-                this.columnPhone_NumberH = base.Columns["Phone_NumberH"];
-                this.columnBill_DateH = base.Columns["Bill_DateH"];
-                this.columnSub_TotalH = base.Columns["Sub_TotalH"];
-                this.columnDiscountH = base.Columns["DiscountH"];
-                this.columnTotalH = base.Columns["TotalH"];
-                this.columnPaidH = base.Columns["PaidH"];
-                this.columnBalanceH = base.Columns["BalanceH"];
-                this.columnLast_UpdatedH = base.Columns["Last_UpdatedH"];
+                this.columnBill_no = base.Columns["Bill_no"];
+                this.columnCustomer_Name = base.Columns["Customer_Name"];
+                this.columnAddress = base.Columns["Address"];
+                this.columnPhone_Number = base.Columns["Phone_Number"];
+                this.columnBill_Date = base.Columns["Bill_Date"];
+                this.columnSub_Total = base.Columns["Sub_Total"];
+                this.columnDiscount = base.Columns["Discount"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnPaid = base.Columns["Paid"];
+                this.columnBalance = base.Columns["Balance"];
+                this.columnLast_Updated = base.Columns["Last_Updated"];
                 this.columnSno = base.Columns["Sno"];
                 this.columnProduct = base.Columns["Product"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnPrice = base.Columns["Price"];
-                this.columnBill_no = base.Columns["Bill_no"];
+                this.columnBill_noR = base.Columns["Bill_noR"];
                 this.columnAmount = base.Columns["Amount"];
                 this.columnDate = base.Columns["Date"];
             }
@@ -613,28 +613,28 @@ namespace Aadarsha_Suppliers {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnBillNoH = new global::System.Data.DataColumn("BillNoH", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillNoH);
-                this.columnCustomer_NameH = new global::System.Data.DataColumn("Customer_NameH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCustomer_NameH);
-                this.columnAddressH = new global::System.Data.DataColumn("AddressH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddressH);
-                this.columnPhone_NumberH = new global::System.Data.DataColumn("Phone_NumberH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhone_NumberH);
-                this.columnBill_DateH = new global::System.Data.DataColumn("Bill_DateH", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_DateH);
-                this.columnSub_TotalH = new global::System.Data.DataColumn("Sub_TotalH", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSub_TotalH);
-                this.columnDiscountH = new global::System.Data.DataColumn("DiscountH", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDiscountH);
-                this.columnTotalH = new global::System.Data.DataColumn("TotalH", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalH);
-                this.columnPaidH = new global::System.Data.DataColumn("PaidH", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaidH);
-                this.columnBalanceH = new global::System.Data.DataColumn("BalanceH", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBalanceH);
-                this.columnLast_UpdatedH = new global::System.Data.DataColumn("Last_UpdatedH", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLast_UpdatedH);
+                this.columnBill_no = new global::System.Data.DataColumn("Bill_no", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_no);
+                this.columnCustomer_Name = new global::System.Data.DataColumn("Customer_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustomer_Name);
+                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddress);
+                this.columnPhone_Number = new global::System.Data.DataColumn("Phone_Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhone_Number);
+                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_Date);
+                this.columnSub_Total = new global::System.Data.DataColumn("Sub_Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSub_Total);
+                this.columnDiscount = new global::System.Data.DataColumn("Discount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDiscount);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaid);
+                this.columnBalance = new global::System.Data.DataColumn("Balance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBalance);
+                this.columnLast_Updated = new global::System.Data.DataColumn("Last_Updated", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLast_Updated);
                 this.columnSno = new global::System.Data.DataColumn("Sno", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSno);
                 this.columnProduct = new global::System.Data.DataColumn("Product", typeof(string), null, global::System.Data.MappingType.Element);
@@ -643,12 +643,14 @@ namespace Aadarsha_Suppliers {
                 base.Columns.Add(this.columnQuantity);
                 this.columnPrice = new global::System.Data.DataColumn("Price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice);
-                this.columnBill_no = new global::System.Data.DataColumn("Bill_no", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBill_no);
+                this.columnBill_noR = new global::System.Data.DataColumn("Bill_noR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBill_noR);
                 this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
+                this.ExtendedProperties.Add("Generator_TablePropName", "_PrintBill");
+                this.ExtendedProperties.Add("Generator_UserTableName", "PrintBill");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -716,7 +718,7 @@ namespace Aadarsha_Suppliers {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                printbill ds = new printbill();
+                PrintBill ds = new PrintBill();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -791,177 +793,177 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int BillNoH {
+            public int Bill_no {
                 get {
                     try {
-                        return ((int)(this[this.tablePrintBill.BillNoHColumn]));
+                        return ((int)(this[this.tablePrintBill.Bill_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BillNoH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_no\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.BillNoHColumn] = value;
+                    this[this.tablePrintBill.Bill_noColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Customer_NameH {
+            public string Customer_Name {
                 get {
                     try {
-                        return ((string)(this[this.tablePrintBill.Customer_NameHColumn]));
+                        return ((string)(this[this.tablePrintBill.Customer_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Customer_NameH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Customer_Name\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Customer_NameHColumn] = value;
+                    this[this.tablePrintBill.Customer_NameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string AddressH {
+            public string Address {
                 get {
                     try {
-                        return ((string)(this[this.tablePrintBill.AddressHColumn]));
+                        return ((string)(this[this.tablePrintBill.AddressColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AddressH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.AddressHColumn] = value;
+                    this[this.tablePrintBill.AddressColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Phone_NumberH {
+            public string Phone_Number {
                 get {
                     try {
-                        return ((string)(this[this.tablePrintBill.Phone_NumberHColumn]));
+                        return ((string)(this[this.tablePrintBill.Phone_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Phone_NumberH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Phone_Number\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Phone_NumberHColumn] = value;
+                    this[this.tablePrintBill.Phone_NumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Bill_DateH {
+            public System.DateTime Bill_Date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePrintBill.Bill_DateHColumn]));
+                        return ((global::System.DateTime)(this[this.tablePrintBill.Bill_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_DateH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_Date\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Bill_DateHColumn] = value;
+                    this[this.tablePrintBill.Bill_DateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Sub_TotalH {
+            public decimal Sub_Total {
                 get {
                     try {
-                        return ((decimal)(this[this.tablePrintBill.Sub_TotalHColumn]));
+                        return ((decimal)(this[this.tablePrintBill.Sub_TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sub_TotalH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sub_Total\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Sub_TotalHColumn] = value;
+                    this[this.tablePrintBill.Sub_TotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal DiscountH {
+            public decimal Discount {
                 get {
                     try {
-                        return ((decimal)(this[this.tablePrintBill.DiscountHColumn]));
+                        return ((decimal)(this[this.tablePrintBill.DiscountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiscountH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Discount\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.DiscountHColumn] = value;
+                    this[this.tablePrintBill.DiscountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal TotalH {
+            public decimal Total {
                 get {
                     try {
-                        return ((decimal)(this[this.tablePrintBill.TotalHColumn]));
+                        return ((decimal)(this[this.tablePrintBill.TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.TotalHColumn] = value;
+                    this[this.tablePrintBill.TotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal PaidH {
+            public decimal Paid {
                 get {
                     try {
-                        return ((decimal)(this[this.tablePrintBill.PaidHColumn]));
+                        return ((decimal)(this[this.tablePrintBill.PaidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PaidH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Paid\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.PaidHColumn] = value;
+                    this[this.tablePrintBill.PaidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal BalanceH {
+            public decimal Balance {
                 get {
                     try {
-                        return ((decimal)(this[this.tablePrintBill.BalanceHColumn]));
+                        return ((decimal)(this[this.tablePrintBill.BalanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BalanceH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Balance\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.BalanceHColumn] = value;
+                    this[this.tablePrintBill.BalanceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Last_UpdatedH {
+            public System.DateTime Last_Updated {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePrintBill.Last_UpdatedHColumn]));
+                        return ((global::System.DateTime)(this[this.tablePrintBill.Last_UpdatedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Last_UpdatedH\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Last_Updated\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Last_UpdatedHColumn] = value;
+                    this[this.tablePrintBill.Last_UpdatedColumn] = value;
                 }
             }
             
@@ -1031,17 +1033,17 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Bill_no {
+            public int Bill_noR {
                 get {
                     try {
-                        return ((int)(this[this.tablePrintBill.Bill_noColumn]));
+                        return ((int)(this[this.tablePrintBill.Bill_noRColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_no\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bill_noR\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Bill_noColumn] = value;
+                    this[this.tablePrintBill.Bill_noRColumn] = value;
                 }
             }
             
@@ -1079,134 +1081,134 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBillNoHNull() {
-                return this.IsNull(this.tablePrintBill.BillNoHColumn);
+            public bool IsBill_noNull() {
+                return this.IsNull(this.tablePrintBill.Bill_noColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBillNoHNull() {
-                this[this.tablePrintBill.BillNoHColumn] = global::System.Convert.DBNull;
+            public void SetBill_noNull() {
+                this[this.tablePrintBill.Bill_noColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCustomer_NameHNull() {
-                return this.IsNull(this.tablePrintBill.Customer_NameHColumn);
+            public bool IsCustomer_NameNull() {
+                return this.IsNull(this.tablePrintBill.Customer_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCustomer_NameHNull() {
-                this[this.tablePrintBill.Customer_NameHColumn] = global::System.Convert.DBNull;
+            public void SetCustomer_NameNull() {
+                this[this.tablePrintBill.Customer_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAddressHNull() {
-                return this.IsNull(this.tablePrintBill.AddressHColumn);
+            public bool IsAddressNull() {
+                return this.IsNull(this.tablePrintBill.AddressColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAddressHNull() {
-                this[this.tablePrintBill.AddressHColumn] = global::System.Convert.DBNull;
+            public void SetAddressNull() {
+                this[this.tablePrintBill.AddressColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPhone_NumberHNull() {
-                return this.IsNull(this.tablePrintBill.Phone_NumberHColumn);
+            public bool IsPhone_NumberNull() {
+                return this.IsNull(this.tablePrintBill.Phone_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPhone_NumberHNull() {
-                this[this.tablePrintBill.Phone_NumberHColumn] = global::System.Convert.DBNull;
+            public void SetPhone_NumberNull() {
+                this[this.tablePrintBill.Phone_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBill_DateHNull() {
-                return this.IsNull(this.tablePrintBill.Bill_DateHColumn);
+            public bool IsBill_DateNull() {
+                return this.IsNull(this.tablePrintBill.Bill_DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBill_DateHNull() {
-                this[this.tablePrintBill.Bill_DateHColumn] = global::System.Convert.DBNull;
+            public void SetBill_DateNull() {
+                this[this.tablePrintBill.Bill_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSub_TotalHNull() {
-                return this.IsNull(this.tablePrintBill.Sub_TotalHColumn);
+            public bool IsSub_TotalNull() {
+                return this.IsNull(this.tablePrintBill.Sub_TotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSub_TotalHNull() {
-                this[this.tablePrintBill.Sub_TotalHColumn] = global::System.Convert.DBNull;
+            public void SetSub_TotalNull() {
+                this[this.tablePrintBill.Sub_TotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDiscountHNull() {
-                return this.IsNull(this.tablePrintBill.DiscountHColumn);
+            public bool IsDiscountNull() {
+                return this.IsNull(this.tablePrintBill.DiscountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDiscountHNull() {
-                this[this.tablePrintBill.DiscountHColumn] = global::System.Convert.DBNull;
+            public void SetDiscountNull() {
+                this[this.tablePrintBill.DiscountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTotalHNull() {
-                return this.IsNull(this.tablePrintBill.TotalHColumn);
+            public bool IsTotalNull() {
+                return this.IsNull(this.tablePrintBill.TotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTotalHNull() {
-                this[this.tablePrintBill.TotalHColumn] = global::System.Convert.DBNull;
+            public void SetTotalNull() {
+                this[this.tablePrintBill.TotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPaidHNull() {
-                return this.IsNull(this.tablePrintBill.PaidHColumn);
+            public bool IsPaidNull() {
+                return this.IsNull(this.tablePrintBill.PaidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPaidHNull() {
-                this[this.tablePrintBill.PaidHColumn] = global::System.Convert.DBNull;
+            public void SetPaidNull() {
+                this[this.tablePrintBill.PaidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBalanceHNull() {
-                return this.IsNull(this.tablePrintBill.BalanceHColumn);
+            public bool IsBalanceNull() {
+                return this.IsNull(this.tablePrintBill.BalanceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBalanceHNull() {
-                this[this.tablePrintBill.BalanceHColumn] = global::System.Convert.DBNull;
+            public void SetBalanceNull() {
+                this[this.tablePrintBill.BalanceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLast_UpdatedHNull() {
-                return this.IsNull(this.tablePrintBill.Last_UpdatedHColumn);
+            public bool IsLast_UpdatedNull() {
+                return this.IsNull(this.tablePrintBill.Last_UpdatedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLast_UpdatedHNull() {
-                this[this.tablePrintBill.Last_UpdatedHColumn] = global::System.Convert.DBNull;
+            public void SetLast_UpdatedNull() {
+                this[this.tablePrintBill.Last_UpdatedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1259,14 +1261,14 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBill_noNull() {
-                return this.IsNull(this.tablePrintBill.Bill_noColumn);
+            public bool IsBill_noRNull() {
+                return this.IsNull(this.tablePrintBill.Bill_noRColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBill_noNull() {
-                this[this.tablePrintBill.Bill_noColumn] = global::System.Convert.DBNull;
+            public void SetBill_noRNull() {
+                this[this.tablePrintBill.Bill_noRColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

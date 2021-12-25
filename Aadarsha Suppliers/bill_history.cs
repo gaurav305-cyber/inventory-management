@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -19,7 +21,6 @@ namespace Aadarsha_Suppliers
         {
             InitializeComponent();
         }
-
         private void bill_history_Load(object sender, EventArgs e)
         {
             fillgrid();
@@ -31,7 +32,7 @@ namespace Aadarsha_Suppliers
         private void button2_Click(object sender, EventArgs e)
         {
             con.Open();
-            da = new SqlDataAdapter("select * from BillTbl where Bill_Date between '"+dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "' order by Bill_no asc", con);
+            da = new SqlDataAdapter("select * from BillTbl where Bill_Date between '" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "' order by Bill_no asc", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "BillTbl");
             dataGridView1.DataSource = ds.Tables["BillTbl"];
@@ -76,7 +77,7 @@ namespace Aadarsha_Suppliers
                     totalReceived();
                     totalRemaining();
                 }
-                else if(dialogResult == DialogResult.No)
+                else if (dialogResult == DialogResult.No)
                 {
 
                 }
@@ -94,9 +95,9 @@ namespace Aadarsha_Suppliers
         }
         public void totalsale()
         {
-            tb.Text = (dataGridView1.Rows.Count-1).ToString();
+            tb.Text = (dataGridView1.Rows.Count - 1).ToString();
             double sum = 0;
-            for(int i=0; i < dataGridView1.Rows.Count-1; ++i)
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; ++i)
             {
                 sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[7].Value);
             }
@@ -127,17 +128,17 @@ namespace Aadarsha_Suppliers
         {
             update_bill updt = new update_bill();
             updt.bill_no.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            updt.c_name.Text= this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            updt.c_name.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             updt.address.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             updt.phone.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            updt.dateTimePicker1.Text= this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            updt.dateTimePicker1.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString();
             updt.sub.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString();
             updt.discount.Text = this.dataGridView1.CurrentRow.Cells[6].Value.ToString();
             updt.total.Text = this.dataGridView1.CurrentRow.Cells[7].Value.ToString();
             updt.paid.Text = this.dataGridView1.CurrentRow.Cells[8].Value.ToString();
             updt.balance.Text = this.dataGridView1.CurrentRow.Cells[9].Value.ToString();
             updt.Show();
-            
+
 
 
 

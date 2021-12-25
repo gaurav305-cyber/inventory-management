@@ -33,7 +33,7 @@ namespace Aadarsha_Suppliers
             Frmbill_vrb.FormBorderStyle = FormBorderStyle.None;
             this.panelFormLoader.Controls.Add(Frmbill_vrb);
             Frmbill_vrb.Show();
-            
+
 
         }
 
@@ -47,22 +47,47 @@ namespace Aadarsha_Suppliers
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
+       
         private void panelFormLoader_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+       
+
+        
+
+        //private void button4_Leave(object sender, EventArgs e)
+        //{
+        //button4.BackColor = Color.FromArgb(255,255,255);
+        //  button4.ForeColor = Color.FromArgb(0,0,0);
+        //}
+
+        // private void button_stock_Leave(object sender, EventArgs e)
+        //{
+        //  button_stock.BackColor = Color.FromArgb(255,255,255);
+        //button_stock.ForeColor = Color.FromArgb(0, 0, 0);
+        //}
+        private void button_settings(object sender, EventArgs e)
+        {
+            foreach (Control c in panel4.Controls)
+            {
+                c.BackColor = Color.FromArgb(255, 255, 255);
+                c.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+            Control click = (Control)sender;
+            click.BackColor = Color.FromArgb(0, 128, 255);
+            click.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+        
+
+       
+        
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
             button_settings(button4, null);
             this.panelFormLoader.Controls.Clear();
@@ -70,10 +95,9 @@ namespace Aadarsha_Suppliers
             Frmbill_vrb.FormBorderStyle = FormBorderStyle.None;
             this.panelFormLoader.Controls.Add(Frmbill_vrb);
             Frmbill_vrb.Show();
-            
         }
 
-        private void button_stock_Click(object sender, EventArgs e)
+        private void button_stock_Click_1(object sender, EventArgs e)
         {
             button_settings(button_stock, null);
             this.panelFormLoader.Controls.Clear();
@@ -81,33 +105,9 @@ namespace Aadarsha_Suppliers
             Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
             this.panelFormLoader.Controls.Add(Frmmanage_vrb);
             Frmmanage_vrb.Show();
-            
         }
 
-        //private void button4_Leave(object sender, EventArgs e)
-        //{
-            //button4.BackColor = Color.FromArgb(255,255,255);
-          //  button4.ForeColor = Color.FromArgb(0,0,0);
-        //}
-
-       // private void button_stock_Leave(object sender, EventArgs e)
-        //{
-          //  button_stock.BackColor = Color.FromArgb(255,255,255);
-            //button_stock.ForeColor = Color.FromArgb(0, 0, 0);
-        //}
-        private void button_settings(object sender, EventArgs e)
-        {
-            foreach(Control c in panel4.Controls)
-            {
-                c.BackColor= Color.FromArgb(255,255,255);
-                c.ForeColor = Color.FromArgb(0,0,0);
-            }
-            Control click = (Control)sender;
-            click.BackColor= Color.FromArgb(0, 128, 255);
-            click.ForeColor = Color.FromArgb(255,255,255);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             button_settings(button5, null);
             this.panelFormLoader.Controls.Clear();
@@ -117,7 +117,7 @@ namespace Aadarsha_Suppliers
             Frmmanage_vrb.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             button_settings(button1, null);
             this.panelFormLoader.Controls.Clear();
@@ -127,7 +127,7 @@ namespace Aadarsha_Suppliers
             Frmmanage_vrb.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             button_settings(button6, null);
             this.panelFormLoader.Controls.Clear();
@@ -135,6 +135,16 @@ namespace Aadarsha_Suppliers
             Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
             this.panelFormLoader.Controls.Add(Frmmanage_vrb);
             Frmmanage_vrb.Show();
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

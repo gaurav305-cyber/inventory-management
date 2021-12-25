@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-
 
 namespace Aadarsha_Suppliers
 {
@@ -24,24 +24,19 @@ namespace Aadarsha_Suppliers
         int subtotal;
         int grand_total;
         int balance1;
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void update_bill_Load(object sender, EventArgs e)
         {
             con.Open();
-            cmd=con.CreateCommand();
-            cmd.CommandType=CommandType.Text;
-            cmd.CommandText="select * from billitemTbl where Bill_no like ('"+bill_no.Text+"%')";
+            cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from billitemTbl where Bill_no like ('" + bill_no.Text + "%')";
             cmd.ExecuteNonQuery();
-            dt=new DataTable();
-            da=new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            dataGridView1.DataSource=dt;
+            dataGridView1.DataSource = dt;
             con.Close();
-            dataGridView1.Columns[1].AutoSizeMode=DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             product.Select();
             product.Items.Clear();
@@ -58,18 +53,7 @@ namespace Aadarsha_Suppliers
                 product.Items.Add(dr["Name"].ToString());
             }
             con.Close();
-
         }
-        private void quantity_Leave(object sender, EventArgs e)
-        {
-            CalAmount();
-        }
-        private void price_Leave(object sender, EventArgs e)
-        {
-            CalAmount();
-        }
-
-
         public void CalAmount()
         {
             double a1, b1, i;
@@ -92,11 +76,20 @@ namespace Aadarsha_Suppliers
             }
         }
 
+        private void price_Leave(object sender, EventArgs e)
+        {
+            CalAmount();
+        }
+
+        private void quantity_Leave(object sender, EventArgs e)
+        {
+            CalAmount();
+        }
+
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             LoadSerialNo();
         }
-
         int i;
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -108,7 +101,6 @@ namespace Aadarsha_Suppliers
             amount.Text = row.Cells[4].Value.ToString();
             // dateTimePicker1.Value.to= row.Cells[6].Value.ToString();
             countrow.Text = row.Cells[0].Value.ToString();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -129,14 +121,13 @@ namespace Aadarsha_Suppliers
             subTotal();
             CalDiscount();
             CalBalance();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (countrow.Text == "")
             {
-                for(int i=0; i < dataGridView1.Rows.Count - 1; i++)
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
                     dataGridView1.Rows[1].Cells[0].Value = (i + 1).ToString();
                 }
@@ -152,7 +143,7 @@ namespace Aadarsha_Suppliers
                 product.Focus();
                 dt.Rows.Add(row1);
                 dataGridView1.Refresh();
-               
+
 
 
             }
@@ -201,16 +192,6 @@ namespace Aadarsha_Suppliers
             }
 
         }
-
-        private void sub_TextChanged(object sender, EventArgs e)
-        {
-            CalDiscount();
-        }
-
-        private void discount_Leave(object sender, EventArgs e)
-        {
-            CalDiscount();
-        }
         public void CalBalance()
         {
             double a1, b1, i;
@@ -221,6 +202,16 @@ namespace Aadarsha_Suppliers
             balance.Text = i.ToString("C").Remove(0, 1);
 
 
+        }
+
+        private void sub_TextChanged(object sender, EventArgs e)
+        {
+            CalDiscount();
+        }
+
+        private void discount_Leave(object sender, EventArgs e)
+        {
+            CalDiscount();
         }
 
         private void discount_TextChanged(object sender, EventArgs e)
@@ -271,11 +262,12 @@ namespace Aadarsha_Suppliers
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message+"1");
+                MessageBox.Show(ex.Message + "1");
             }
-            try {
+            try
+            {
                 con.Open();
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
@@ -287,14 +279,15 @@ namespace Aadarsha_Suppliers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message+"2");
+                MessageBox.Show(ex.Message + "2");
             }
-            try {
+            try
+            {
                 con.Open();
                 cmd = new SqlCommand("update BillTbl set Customer_Name='" + c_name.Text + "',Address='" + address.Text + "',Phone_Number='" + phone.Text + "',Last_updated='" + DateTime.Now.ToString("MM/dd/yyyy") + "',Sub_Total='" + sub.Text + "',Discount='" + discount.Text + "',Total='" + total.Text + "',Paid='" + paid.Text + "',Balance='" + balance.Text + "'", con);
                 cmd.ExecuteNonQuery();
-                con.Close(); 
-            
+                con.Close();
+
             }
             catch (Exception ex)
             {
@@ -313,13 +306,6 @@ namespace Aadarsha_Suppliers
             balance.Text = "";
             //dataGridView1.Rows.Clear();
             product.Select();
-           
-
-        }
-
-        private void update_bill_Leave(object sender, EventArgs e)
-        {
-            
         }
 
         private void update_bill_FormClosed(object sender, FormClosedEventArgs e)
@@ -327,14 +313,7 @@ namespace Aadarsha_Suppliers
             bill_history bh = new bill_history();
             bh.FormClosed += new FormClosedEventHandler(update_bill_FormClosed);
             bh.Refresh();
-            bh.fillgrid();
-            bh.totalsale();
-
-        }
-
-        private void update_bill_FormClosing(object sender, FormClosingEventArgs e)
-        {
-           
+            
         }
     }
 }

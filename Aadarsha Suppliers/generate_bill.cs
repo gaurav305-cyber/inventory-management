@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+
 namespace Aadarsha_Suppliers
 {
     public partial class generate_bill : Form
@@ -24,19 +27,18 @@ namespace Aadarsha_Suppliers
         int subtotal;
         int grand_total;
         int balance1;
-        // string connStr = "Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True";
-       
+
         private void generate_bill_Load(object sender, EventArgs e)
         {
             product.Select();
             product.Items.Clear();
             con.Open();
-            cmd=con.CreateCommand();
-            cmd.CommandType=CommandType.Text;
-            cmd.CommandText="select Name from ProductTbl order by Name asc";
+            cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Name from ProductTbl order by Name asc";
             cmd.ExecuteNonQuery();
-            DataTable dt =new DataTable();
-            SqlDataAdapter da =new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
@@ -46,13 +48,8 @@ namespace Aadarsha_Suppliers
             LoadBillNo();
             dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
-
         }
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-         public void LoadBillNo()
+        public void LoadBillNo()
         {
 
             int a;
@@ -67,7 +64,7 @@ namespace Aadarsha_Suppliers
                 string val = dr[0].ToString();
                 if (val == "")
                 {
-                    bill.Text = "1"; 
+                    bill.Text = "1";
                 }
                 else
                 {
@@ -79,8 +76,6 @@ namespace Aadarsha_Suppliers
                 con.Close();
             }
         }
-
-        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -102,14 +97,14 @@ namespace Aadarsha_Suppliers
                     dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[1];
 
                 }
-            
-                
+
+
             }
             else
             {
                 int i;
                 i = Convert.ToInt32(countrow.Text);
-                DataGridViewRow row = dataGridView1.Rows[i-1];
+                DataGridViewRow row = dataGridView1.Rows[i - 1];
                 row.Cells[1].Value = product.Text;
                 row.Cells[2].Value = price.Text;
                 row.Cells[3].Value = quantity.Text;
@@ -122,18 +117,16 @@ namespace Aadarsha_Suppliers
             }
             clear();
             subTotal();
-            
-
-            //subtotal = Convert.ToInt32(price.Text) * Convert.ToInt32(quantity.Text);
-            // sub.Text = subtotal.ToString();
 
         }
+
         private void discount_TextChanged(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 grand_total = subtotal - Convert.ToInt32(discount.Text);
                 total.Text = grand_total.ToString();
-                
+
             }
 
             catch
@@ -144,16 +137,18 @@ namespace Aadarsha_Suppliers
 
         private void paid_TextChanged(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 balance1 = grand_total - Convert.ToInt32(paid.Text);
                 balance.Text = balance1.ToString();
-               
+
             }
             catch
             {
                 paid.Text = "";
             }
         }
+
         private void button4_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count < 1)
@@ -163,15 +158,17 @@ namespace Aadarsha_Suppliers
             else
             {
                 con.Open();
-                cmd = new SqlCommand("Insert into BillTbl values(" +Convert.ToInt32(bill.Text) + ",'" + c_name.Text + "','" + address.Text + "','" + phone.Text + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "','" + sub.Text + "','"+discount.Text+"','"+total.Text+"','"+paid.Text+"','"+balance.Text+"')",con);
+                cmd = new SqlCommand("Insert into BillTbl values(" + Convert.ToInt32(bill.Text) + ",'" + c_name.Text + "','" + address.Text + "','" + phone.Text + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "','" + sub.Text + "','" + discount.Text + "','" + total.Text + "','" + paid.Text + "','" + balance.Text + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "')", con);
                 cmd.ExecuteNonQuery();
 
-                for(int i=0; i<dataGridView1.Rows.Count; i++) {
-                SqlCommand cmd1 = new SqlCommand("Insert into billitemTbl values(" + Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "'," + Convert.ToString(dataGridView1.Rows[i].Cells[3].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "'," + Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "')", con);
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    SqlCommand cmd1 = new SqlCommand("Insert into billitemTbl values(" + Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "'," + Convert.ToString(dataGridView1.Rows[i].Cells[3].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "'," + Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "')", con);
                     cmd1.ExecuteNonQuery();
                 }
                 MessageBox.Show("Bill saved");
                 con.Close();
+                Class1.strInv=bill.Text;
                 LoadBillNo();
                 clear();
                 c_name.Text = "";
@@ -184,20 +181,17 @@ namespace Aadarsha_Suppliers
                 balance.Text = "";
                 dataGridView1.Rows.Clear();
                 product.Select();
+                billprint bp=new billprint();
+                bp.ShowDialog();
             }
-            
+
         }
         private void clear()
         {
-           product.Text="";
-            price.Text="";
-            quantity.Text="";
-            amount.Text = "";           
-        }
-        
-        private void generate_bill_Click(object sender, EventArgs e)
-        {
-
+            product.Text = "";
+            price.Text = "";
+            quantity.Text = "";
+            amount.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -208,14 +202,13 @@ namespace Aadarsha_Suppliers
             }
             else
             {
-                foreach(DataGridViewRow row in dataGridView1.SelectedRows)
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
                     if (!row.IsNewRow) dataGridView1.Rows.Remove(row);
                 }
             }
             button1.Text = "Add";
             clear();
-
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -223,16 +216,17 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
         int i;
+
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             i = e.RowIndex;
             DataGridViewRow row = dataGridView1.Rows[i];
             product.Text = row.Cells[1].Value.ToString();
-            price.Text= row.Cells[2].Value.ToString();
-            quantity.Text= row.Cells[3].Value.ToString();
-            amount.Text= row.Cells[4].Value.ToString();
-           // dateTimePicker1.Value.to= row.Cells[6].Value.ToString();
-            countrow.Text= row.Cells[0].Value.ToString();
+            price.Text = row.Cells[2].Value.ToString();
+            quantity.Text = row.Cells[3].Value.ToString();
+            amount.Text = row.Cells[4].Value.ToString();
+            // dateTimePicker1.Value.to= row.Cells[6].Value.ToString();
+            countrow.Text = row.Cells[0].Value.ToString();
             button1.Text = "Update";
         }
 
@@ -252,20 +246,10 @@ namespace Aadarsha_Suppliers
             }
 
         }
-
-        private void quantity_Leave(object sender, EventArgs e)
-        {
-            CalAmount();
-        }
-
-        private void price_Leave(object sender, EventArgs e)
-        {
-            CalAmount();
-        }
         public void subTotal()
         {
             double sum = 0;
-            for(int i=0; i < dataGridView1.Rows.Count; ++i)
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
             {
                 sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
             }
@@ -283,6 +267,27 @@ namespace Aadarsha_Suppliers
             }
 
         }
+        public void CalBalance()
+        {
+            double a1, b1, i;
+            double.TryParse(total.Text, out a1);
+            double.TryParse(paid.Text, out b1);
+            i = a1 - b1;
+
+            balance.Text = i.ToString("C").Remove(0, 1);
+
+
+        }
+
+        private void quantity_Leave(object sender, EventArgs e)
+        {
+            CalAmount();
+        }
+
+        private void price_Leave(object sender, EventArgs e)
+        {
+            CalAmount();
+        }
 
         private void sub_TextChanged(object sender, EventArgs e)
         {
@@ -293,17 +298,6 @@ namespace Aadarsha_Suppliers
         {
             CalDiscount();
         }
-        public void CalBalance()
-        {
-            double a1, b1, i;
-            double.TryParse(total.Text, out a1);
-            double.TryParse(paid.Text, out b1);
-            i = a1 - b1;
-            
-              balance.Text = i.ToString("C").Remove(0, 1);
-            
-
-        }
 
         private void total_TextChanged(object sender, EventArgs e)
         {
@@ -313,191 +307,6 @@ namespace Aadarsha_Suppliers
         private void paid_Leave(object sender, EventArgs e)
         {
             CalBalance();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void bill_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void phone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void address_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void c_name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void amount_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void countrow_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void product_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quantity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void price_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void balance_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
