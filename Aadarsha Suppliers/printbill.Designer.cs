@@ -299,7 +299,7 @@ namespace Aadarsha_Suppliers {
             
             private global::System.Data.DataColumn columnBalance;
             
-            private global::System.Data.DataColumn columnLast_Updated;
+            private global::System.Data.DataColumn columnLast_updated;
             
             private global::System.Data.DataColumn columnSno;
             
@@ -430,9 +430,9 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Last_UpdatedColumn {
+            public global::System.Data.DataColumn Last_updatedColumn {
                 get {
-                    return this.columnLast_Updated;
+                    return this.columnLast_updated;
                 }
             }
             
@@ -534,13 +534,13 @@ namespace Aadarsha_Suppliers {
                         string Customer_Name, 
                         string Address, 
                         string Phone_Number, 
-                        System.DateTime Bill_Date, 
+                        string Bill_Date, 
                         decimal Sub_Total, 
                         decimal Discount, 
                         decimal Total, 
                         decimal Paid, 
                         decimal Balance, 
-                        System.DateTime Last_Updated, 
+                        string Last_updated, 
                         int Sno, 
                         string Product, 
                         int Quantity, 
@@ -560,7 +560,7 @@ namespace Aadarsha_Suppliers {
                         Total,
                         Paid,
                         Balance,
-                        Last_Updated,
+                        Last_updated,
                         Sno,
                         Product,
                         Quantity,
@@ -600,7 +600,7 @@ namespace Aadarsha_Suppliers {
                 this.columnTotal = base.Columns["Total"];
                 this.columnPaid = base.Columns["Paid"];
                 this.columnBalance = base.Columns["Balance"];
-                this.columnLast_Updated = base.Columns["Last_Updated"];
+                this.columnLast_updated = base.Columns["Last_updated"];
                 this.columnSno = base.Columns["Sno"];
                 this.columnProduct = base.Columns["Product"];
                 this.columnQuantity = base.Columns["Quantity"];
@@ -621,7 +621,7 @@ namespace Aadarsha_Suppliers {
                 base.Columns.Add(this.columnAddress);
                 this.columnPhone_Number = new global::System.Data.DataColumn("Phone_Number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhone_Number);
-                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnBill_Date = new global::System.Data.DataColumn("Bill_Date", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBill_Date);
                 this.columnSub_Total = new global::System.Data.DataColumn("Sub_Total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSub_Total);
@@ -633,8 +633,8 @@ namespace Aadarsha_Suppliers {
                 base.Columns.Add(this.columnPaid);
                 this.columnBalance = new global::System.Data.DataColumn("Balance", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBalance);
-                this.columnLast_Updated = new global::System.Data.DataColumn("Last_Updated", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLast_Updated);
+                this.columnLast_updated = new global::System.Data.DataColumn("Last_updated", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLast_updated);
                 this.columnSno = new global::System.Data.DataColumn("Sno", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSno);
                 this.columnProduct = new global::System.Data.DataColumn("Product", typeof(string), null, global::System.Data.MappingType.Element);
@@ -857,10 +857,10 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Bill_Date {
+            public string Bill_Date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePrintBill.Bill_DateColumn]));
+                        return ((string)(this[this.tablePrintBill.Bill_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Bill_Date\' in table \'PrintBill\' is DBNull.", e);
@@ -953,17 +953,17 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Last_Updated {
+            public string Last_updated {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePrintBill.Last_UpdatedColumn]));
+                        return ((string)(this[this.tablePrintBill.Last_updatedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Last_Updated\' in table \'PrintBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Last_updated\' in table \'PrintBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePrintBill.Last_UpdatedColumn] = value;
+                    this[this.tablePrintBill.Last_updatedColumn] = value;
                 }
             }
             
@@ -1201,14 +1201,14 @@ namespace Aadarsha_Suppliers {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLast_UpdatedNull() {
-                return this.IsNull(this.tablePrintBill.Last_UpdatedColumn);
+            public bool IsLast_updatedNull() {
+                return this.IsNull(this.tablePrintBill.Last_updatedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLast_UpdatedNull() {
-                this[this.tablePrintBill.Last_UpdatedColumn] = global::System.Convert.DBNull;
+            public void SetLast_updatedNull() {
+                this[this.tablePrintBill.Last_updatedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -29,7 +29,7 @@ namespace Aadarsha_Suppliers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.balance = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.paid = new System.Windows.Forms.TextBox();
@@ -58,6 +58,7 @@ namespace Aadarsha_Suppliers
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.count = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -76,6 +77,7 @@ namespace Aadarsha_Suppliers
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -228,7 +230,7 @@ namespace Aadarsha_Suppliers
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.Font = new System.Drawing.Font("Arial", 12F);
-            this.button2.Location = new System.Drawing.Point(1375, 35);
+            this.button2.Location = new System.Drawing.Point(1362, 36);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 31);
@@ -304,24 +306,25 @@ namespace Aadarsha_Suppliers
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 12F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 288);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 293);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1141, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 347);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
             // panel5
@@ -376,6 +379,7 @@ namespace Aadarsha_Suppliers
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.count);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.amount);
             this.panel3.Controls.Add(this.label20);
@@ -396,8 +400,16 @@ namespace Aadarsha_Suppliers
             this.panel3.Location = new System.Drawing.Point(0, 176);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1500, 114);
+            this.panel3.Size = new System.Drawing.Size(1500, 118);
             this.panel3.TabIndex = 6;
+            // 
+            // count
+            // 
+            this.count.Location = new System.Drawing.Point(1259, 71);
+            this.count.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(25, 22);
+            this.count.TabIndex = 19;
             // 
             // label8
             // 
@@ -421,6 +433,7 @@ namespace Aadarsha_Suppliers
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.bill_no);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.phone);
@@ -585,11 +598,10 @@ namespace Aadarsha_Suppliers
             this.panel6.Controls.Add(this.sub);
             this.panel6.Controls.Add(this.label13);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(1141, 0);
+            this.panel6.Location = new System.Drawing.Point(1141, 2);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(359, 640);
+            this.panel6.Size = new System.Drawing.Size(359, 638);
             this.panel6.TabIndex = 1;
             // 
             // button3
@@ -604,6 +616,14 @@ namespace Aadarsha_Suppliers
             this.button3.Text = "Print";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(1141, 84);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(250, 22);
+            this.dateTimePicker2.TabIndex = 22;
             // 
             // update_bill
             // 
@@ -683,5 +703,7 @@ namespace Aadarsha_Suppliers
         public System.Windows.Forms.TextBox phone;
         public System.Windows.Forms.TextBox address;
         public System.Windows.Forms.TextBox c_name;
+        private System.Windows.Forms.TextBox count;
+        public System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

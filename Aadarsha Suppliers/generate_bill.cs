@@ -111,10 +111,11 @@ namespace Aadarsha_Suppliers
                 row.Cells[4].Value = amount.Text;
                 row.Cells[5].Value = bill.Text;
                 row.Cells[6].Value = dateTimePicker1.Value.ToString("dd-MM-yyyy");
-                //button1.Text = "Add";
+                button1.Text = "Add";
 
 
             }
+            countrow.Text="";
             clear();
             subTotal();
 
@@ -205,6 +206,7 @@ namespace Aadarsha_Suppliers
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
                     if (!row.IsNewRow) dataGridView1.Rows.Remove(row);
+
                 }
             }
             button1.Text = "Add";

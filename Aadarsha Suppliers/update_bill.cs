@@ -62,7 +62,7 @@ namespace Aadarsha_Suppliers
             i = a1 * b1;
             if (i > 0)
             {
-                amount.Text = i.ToString("C").Remove(0, 1);
+                amount.Text = i.ToString();
             }
 
         }
@@ -94,29 +94,27 @@ namespace Aadarsha_Suppliers
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             i = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[1];
+            DataGridViewRow row = dataGridView1.Rows[i];
             product.Text = row.Cells[1].Value.ToString();
-            price.Text = row.Cells[2].Value.ToString();
-            quantity.Text = row.Cells[3].Value.ToString();
-            amount.Text = row.Cells[4].Value.ToString();
+            price.Text = row.Cells[3].Value.ToString();
+            quantity.Text = row.Cells[2].Value.ToString();
+            amount.Text = row.Cells[5].Value.ToString();
             // dateTimePicker1.Value.to= row.Cells[6].Value.ToString();
-            countrow.Text = row.Cells[0].Value.ToString();
+            count.Text = row.Cells[0].Value.ToString();
+            button1.Text="Update";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (countrow.Text == "")
-            {
-                MessageBox.Show("Select Product to delete");
-            }
-            else
-            {
+           
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
                     if (!row.IsNewRow) dataGridView1.Rows.Remove(row);
-                    LoadSerialNo();
+                   LoadSerialNo();
                 }
-            }
+           
+            button1.Text="Add";
+           
             clear();
             subTotal();
             CalDiscount();
@@ -125,7 +123,7 @@ namespace Aadarsha_Suppliers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (countrow.Text == "")
+            if (count.Text == "")
             {
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
@@ -144,8 +142,6 @@ namespace Aadarsha_Suppliers
                 dt.Rows.Add(row1);
                 dataGridView1.Refresh();
 
-
-
             }
             else
             {
@@ -156,7 +152,8 @@ namespace Aadarsha_Suppliers
                 row.Cells[5].Value = amount.Text;
                 row.Cells[4].Value = bill_no.Text;
                 row.Cells[6].Value = DateTime.Now.ToString("MM/dd/yyyy");
-                //button1.Text = "Add";
+               
+               button1.Text = "Add";
 
 
             }
@@ -170,6 +167,7 @@ namespace Aadarsha_Suppliers
             price.Text = "";
             quantity.Text = "";
             amount.Text = "";
+            count.Text = "";
         }
         public void subTotal()
         {
@@ -284,36 +282,47 @@ namespace Aadarsha_Suppliers
             try
             {
                 con.Open();
-                cmd = new SqlCommand("update BillTbl set Customer_Name='" + c_name.Text + "',Address='" + address.Text + "',Phone_Number='" + phone.Text + "',Last_updated='" + DateTime.Now.ToString("MM/dd/yyyy") + "',Sub_Total='" + sub.Text + "',Discount='" + discount.Text + "',Total='" + total.Text + "',Paid='" + paid.Text + "',Balance='" + balance.Text + "'", con);
+                cmd = new SqlCommand("update BillTbl set Customer_Name='" + c_name.Text + "',Address='" + address.Text + "',Phone_Number='" + phone.Text + "',Last_updated='" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "',Sub_Total='" + sub.Text + "',Discount='" + discount.Text + "',Total='" + total.Text + "',Paid='" + paid.Text + "',Balance='" + balance.Text + "' where Bill_no='" + bill_no.Text + "'", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
+                MessageBox.Show("Bill Updated");
+                Class1.strInv=bill_no.Text;
+                this.Hide();
+                billprint bp=new billprint();
+                bp.Show();
+                c_name.Text = "";
+                address.Text = "";
+                phone.Text = "";
+                sub.Text = "";
+                discount.Text = "";
+                total.Text = "";
+                paid.Text = "";
+                balance.Text = "";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Bill saved");
+            
             //con.Close();
             clear();
-            c_name.Text = "";
-            address.Text = "";
-            phone.Text = "";
-            sub.Text = "";
-            discount.Text = "";
-            total.Text = "";
-            paid.Text = "";
-            balance.Text = "";
+            this.Hide();
             //dataGridView1.Rows.Clear();
             product.Select();
+            
         }
 
         private void update_bill_FormClosed(object sender, FormClosedEventArgs e)
         {
-            bill_history bh = new bill_history();
-            bh.FormClosed += new FormClosedEventHandler(update_bill_FormClosed);
-            bh.Refresh();
+            
             
         }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            
+        }
+        
     }
 }
