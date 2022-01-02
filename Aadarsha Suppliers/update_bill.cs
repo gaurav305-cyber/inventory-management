@@ -13,6 +13,8 @@ namespace Aadarsha_Suppliers
 {
     public partial class update_bill : Form
     {
+        int qty=0 ;
+        
         public update_bill()
         {
             InitializeComponent();
@@ -123,12 +125,16 @@ namespace Aadarsha_Suppliers
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int ia;
             if (count.Text == "")
             {
+                
                 for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
                 {
-                    dataGridView1.Rows[1].Cells[0].Value = (i + 1).ToString();
+                    
+                    dataGridView1.Rows[i].Cells[0].Value = (i + 1).ToString();
                 }
+                if (!(product.Text == dataGridView1.Rows[i].Cells[1].Value.ToString())) { 
                 DataTable dt = dataGridView1.DataSource as DataTable;
                 DataRow row1 = dt.NewRow();
 
@@ -141,6 +147,23 @@ namespace Aadarsha_Suppliers
                 product.Focus();
                 dt.Rows.Add(row1);
                 dataGridView1.Refresh();
+                }
+                else
+                {
+                    
+                    DataGridViewRow row = dataGridView1.Rows[i];
+                   // product.Text = row.Cells[1].Value.ToString();
+                   // price.Text = row.Cells[3].Value.ToString();
+                    int qty3=Convert.ToInt32(row.Cells[2].Value.ToString())+Convert.ToInt32(quantity.Text);
+                    double amt =Convert.ToDouble(row.Cells[5].Value.ToString())+Convert.ToDouble(amount.Text);
+                    
+                    row.Cells[2].Value=qty3.ToString();
+                    row.Cells[5].Value=amt.ToString();
+                    dataGridView1.Refresh();
+                    // dateTimePicker1.Value.to= row.Cells[6].Value.ToString();
+                    //count.Text = row.Cells[0].Value.ToString();
+                    //button1.Text = "Update";
+                }
 
             }
             else
@@ -253,8 +276,18 @@ namespace Aadarsha_Suppliers
 
         private void button4_Click(object sender, EventArgs e)
         {
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand("select Quantity from billitemTbl where Bill_no='" + bill_no.Text + "'", con);
+            SqlDataReader da1 = cmd2.ExecuteReader();
+            while (da1.Read())
+            {
+                qty = Convert.ToInt32(da1.GetValue(0).ToString());
+                
+            }
+            con.Close();
             try
             {
+
                 con.Open();
                 cmd = new SqlCommand("Delete from billitemTbl where Bill_no='" + bill_no.Text + "'", con);
                 cmd.ExecuteNonQuery();
@@ -267,10 +300,18 @@ namespace Aadarsha_Suppliers
             try
             {
                 con.Open();
+                
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
+                    int qty1=0;
+                    string prd1="";
                     SqlCommand cmd1 = new SqlCommand("Insert into billitemTbl values(" + Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "'," + Convert.ToString(dataGridView1.Rows[i].Cells[2].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[3].Value.ToString() + "'," + Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[5].Value.ToString() + "','" + dataGridView1.Rows[i].Cells[6].Value.ToString() + "')", con);
+                    
                     cmd1.ExecuteNonQuery();
+                    qty1 = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString()) - qty;
+                    prd1 = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    SqlCommand cmd3 = new SqlCommand("update ProductTbl set Quantity= Quantity-" + qty1 + " where Name='" + prd1.ToString() + "'", con);
+                    cmd3.ExecuteNonQuery();
                 }
                 con.Close();
 

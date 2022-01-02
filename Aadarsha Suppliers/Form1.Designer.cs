@@ -45,6 +45,7 @@ namespace Aadarsha_Suppliers
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,6 +76,7 @@ namespace Aadarsha_Suppliers
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.button6);
             this.panel4.Controls.Add(this.button5);
@@ -93,10 +95,10 @@ namespace Aadarsha_Suppliers
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(902, 0);
+            this.button1.Location = new System.Drawing.Point(738, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(311, 62);
+            this.button1.Size = new System.Drawing.Size(243, 62);
             this.button1.TabIndex = 1;
             this.button1.Text = "Dashboard";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -125,10 +127,10 @@ namespace Aadarsha_Suppliers
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(585, 0);
+            this.button5.Location = new System.Drawing.Point(485, 0);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(317, 62);
+            this.button5.Size = new System.Drawing.Size(253, 62);
             this.button5.TabIndex = 5;
             this.button5.Text = "Bill History";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,10 +143,10 @@ namespace Aadarsha_Suppliers
             this.button_stock.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.button_stock.Image = ((System.Drawing.Image)(resources.GetObject("button_stock.Image")));
             this.button_stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_stock.Location = new System.Drawing.Point(302, 0);
+            this.button_stock.Location = new System.Drawing.Point(227, 0);
             this.button_stock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_stock.Name = "button_stock";
-            this.button_stock.Size = new System.Drawing.Size(283, 62);
+            this.button_stock.Size = new System.Drawing.Size(258, 62);
             this.button_stock.TabIndex = 2;
             this.button_stock.Text = "Manage Product";
             this.button_stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -160,7 +162,7 @@ namespace Aadarsha_Suppliers
             this.button4.Location = new System.Drawing.Point(0, 0);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(302, 62);
+            this.button4.Size = new System.Drawing.Size(227, 62);
             this.button4.TabIndex = 4;
             this.button4.Text = "Generate Bills";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -246,6 +248,22 @@ namespace Aadarsha_Suppliers
             this.panel3.Size = new System.Drawing.Size(1600, 0);
             this.panel3.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(981, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(231, 62);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Bills";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -283,6 +301,8 @@ namespace Aadarsha_Suppliers
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         #endregion
+
+        private System.Windows.Forms.Button button2;
     }
 }
 

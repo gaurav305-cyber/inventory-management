@@ -146,5 +146,15 @@ namespace Aadarsha_Suppliers
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button_settings(button6, null);
+            this.panelFormLoader.Controls.Clear();
+            Bills Frmmanage_vrb = new Bills() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Frmmanage_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.panelFormLoader.Controls.Add(Frmmanage_vrb);
+            Frmmanage_vrb.Show();
+        }
     }
 }

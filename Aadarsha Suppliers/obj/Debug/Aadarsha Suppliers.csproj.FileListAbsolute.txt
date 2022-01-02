@@ -35,3 +35,10 @@ C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aada
 C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha Suppliers.csproj.CopyComplete
 C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\report.rpt
 C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\report.cs
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha_Suppliers.Dashboard.resources
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\salesreport.rpt
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\salesreport.cs
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha_Suppliers.Bills.resources
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\customerbills.rpt
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\customerbills.cs
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha_Suppliers.login.resources

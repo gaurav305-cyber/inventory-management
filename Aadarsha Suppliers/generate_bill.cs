@@ -164,8 +164,15 @@ namespace Aadarsha_Suppliers
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
+                    int qty=0;
+                    string prd="";
                     SqlCommand cmd1 = new SqlCommand("Insert into billitemTbl values(" + Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[1].Value.ToString() + "'," + Convert.ToString(dataGridView1.Rows[i].Cells[3].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[2].Value.ToString() + "'," + Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value.ToString()) + ",'" + dataGridView1.Rows[i].Cells[4].Value.ToString() + "','" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "')", con);
                     cmd1.ExecuteNonQuery();
+
+                    qty= Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                    prd= dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    SqlCommand cmd2=new SqlCommand("update ProductTbl set Quantity= Quantity-"+qty+" where Name='"+prd.ToString()+"'",con);
+                    cmd2.ExecuteNonQuery();
                 }
                 MessageBox.Show("Bill saved");
                 con.Close();
