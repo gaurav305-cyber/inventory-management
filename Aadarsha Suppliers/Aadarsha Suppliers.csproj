@@ -85,6 +85,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="forgetpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgetpass.Designer.cs">
+      <DependentUpon>forgetpass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="resetpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resetpass.Designer.cs">
+      <DependentUpon>resetpass.cs</DependentUpon>
+    </Compile>
     <Compile Include="salesreport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +167,9 @@
     </Content>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgetpass.resx">
+      <DependentUpon>forgetpass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -187,6 +202,9 @@
       <LastGenOutput>salesreport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="resetpass.resx">
+      <DependentUpon>resetpass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="update_bill.resx">
       <DependentUpon>update_bill.cs</DependentUpon>
     </EmbeddedResource>

@@ -42,3 +42,5 @@ C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aada
 C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\customerbills.rpt
 C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\bin\Debug\customerbills.cs
 C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha_Suppliers.login.resources
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha_Suppliers.forgetpass.resources
+C:\Users\gaura\source\repos\Aadarsha Suppliers\Aadarsha Suppliers\obj\Debug\Aadarsha_Suppliers.resetpass.resources

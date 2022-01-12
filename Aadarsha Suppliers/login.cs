@@ -14,7 +14,10 @@ namespace Aadarsha_Suppliers
 {
     public partial class login : Form
     {
-        
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand();
+        SqlDataAdapter da = new SqlDataAdapter();
+
         public login()
         {
             InitializeComponent();
@@ -32,27 +35,121 @@ namespace Aadarsha_Suppliers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /**
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-VRHT5ES;Initial Catalog=Aadarshadb;Integrated Security=True");
-            SqlDataAdapter da=new SqlDataAdapter("select count(*) from User where Username='"+textBox1.Text+"' and Password='"+textBox2.Text+"'",con);
-            DataTable dt=new DataTable();
-            da.Fill(dt);
-           // if(dt.Rows[0][0].ToString()=="1")**/
-           if(textBox1.Text=="admin" && textBox2.Text=="admin" )
-            {
-                this.Hide();
-                
-                Form1 f1=new Form1();
-                f1.Show();
-                MessageBox.Show("Login success!");
-            }
-            else
-            {
-                MessageBox.Show("Incorrest usernme or password");
-            }
+            
+            
+       
             
             
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = true;
+        }
+
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = false;
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.BackColor = Color.White;
+            panel3.BackColor = Color.White;
+            panel4.BackColor = SystemColors.Control;
+            textBox2.BackColor = SystemColors.Control;
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.BackColor = Color.White;
+            panel4.BackColor = Color.White;
+            panel3.BackColor = SystemColors.Control;
+            textBox1.BackColor = SystemColors.Control;
+        }
+
+       
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+            if (textBox1.Text == "" && textBox2.Text == "")
+            {
+                MessageBox.Show("Please enter username and password", "Login Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (textBox1.Text == "")
+            {
+                MessageBox.Show("Please enter username", "Login Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("Please enter password", "Login Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                con.Open();
+                string login = "SELECT * from [User] WHERE Username='" + textBox1.Text + "' and Password='" + textBox2.Text + "'";
+                cmd = new SqlCommand(login, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                if (dr.Read() == true)
+                {
+                    Form1 f1 = new Form1();
+                    this.Hide();
+                    f1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correct username or password", "Login Failed!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox1.Text = "";
+                    textBox1.Text = "";
+                    textBox1.Focus();
+                }
+                con.Close();
+
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            forgetpass fs = new forgetpass();
+            fs.Show();
         }
     }
 }
